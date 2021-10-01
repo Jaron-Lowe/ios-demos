@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB48CAFA261381D300FE3EEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB48CAF9261381D300FE3EEC /* AppDelegate.swift */; };
+		BB48CAFC261381D300FE3EEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB48CAFB261381D300FE3EEC /* SceneDelegate.swift */; };
+		BB48CAFE261381D300FE3EEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB48CAFD261381D300FE3EEC /* ViewController.swift */; };
+		BB48CB01261381D300FE3EEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB48CAFF261381D300FE3EEC /* Main.storyboard */; };
+		BB48CB03261381D500FE3EEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB48CB02261381D500FE3EEC /* Assets.xcassets */; };
+		BB48CB06261381D500FE3EEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB48CB04261381D500FE3EEC /* LaunchScreen.storyboard */; };
+		BB48CB0F261381ED00FE3EEC /* DateFormatter+Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB48CB0E261381ED00FE3EEC /* DateFormatter+Singleton.swift */; };
+		BB48CB14261397D400FE3EEC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BB48CB13261397D400FE3EEC /* RxSwift */; };
+		BB48CB16261397D400FE3EEC /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = BB48CB15261397D400FE3EEC /* RxCocoa */; };
+		BB48CB18261397D400FE3EEC /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = BB48CB17261397D400FE3EEC /* RxRelay */; };
+		BB48CB1C26139EFC00FE3EEC /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB48CB1B26139EFC00FE3EEC /* DateModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BB48CAF6261381D300FE3EEC /* DateFormatterTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DateFormatterTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB48CAF9261381D300FE3EEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB48CAFB261381D300FE3EEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BB48CAFD261381D300FE3EEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB48CB00261381D300FE3EEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB48CB02261381D500FE3EEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB48CB05261381D500FE3EEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BB48CB07261381D500FE3EEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB48CB0E261381ED00FE3EEC /* DateFormatter+Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Singleton.swift"; sourceTree = "<group>"; };
+		BB48CB1B26139EFC00FE3EEC /* DateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB48CAF3261381D300FE3EEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB48CB18261397D400FE3EEC /* RxRelay in Frameworks */,
+				BB48CB16261397D400FE3EEC /* RxCocoa in Frameworks */,
+				BB48CB14261397D400FE3EEC /* RxSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB48CAED261381D300FE3EEC = {
+			isa = PBXGroup;
+			children = (
+				BB48CAF8261381D300FE3EEC /* DateFormatterTest */,
+				BB48CAF7261381D300FE3EEC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BB48CAF7261381D300FE3EEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB48CAF6261381D300FE3EEC /* DateFormatterTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB48CAF8261381D300FE3EEC /* DateFormatterTest */ = {
+			isa = PBXGroup;
+			children = (
+				BB48CAFF261381D300FE3EEC /* Main.storyboard */,
+				BB48CB1B26139EFC00FE3EEC /* DateModel.swift */,
+				BB48CAFD261381D300FE3EEC /* ViewController.swift */,
+				BB48CB0E261381ED00FE3EEC /* DateFormatter+Singleton.swift */,
+				BB48CB1A26139EE700FE3EEC /* Garbage */,
+			);
+			path = DateFormatterTest;
+			sourceTree = "<group>";
+		};
+		BB48CB1A26139EE700FE3EEC /* Garbage */ = {
+			isa = PBXGroup;
+			children = (
+				BB48CB02261381D500FE3EEC /* Assets.xcassets */,
+				BB48CB04261381D500FE3EEC /* LaunchScreen.storyboard */,
+				BB48CB07261381D500FE3EEC /* Info.plist */,
+				BB48CAF9261381D300FE3EEC /* AppDelegate.swift */,
+				BB48CAFB261381D300FE3EEC /* SceneDelegate.swift */,
+			);
+			name = Garbage;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB48CAF5261381D300FE3EEC /* DateFormatterTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB48CB0A261381D500FE3EEC /* Build configuration list for PBXNativeTarget "DateFormatterTest" */;
+			buildPhases = (
+				BB48CAF2261381D300FE3EEC /* Sources */,
+				BB48CAF3261381D300FE3EEC /* Frameworks */,
+				BB48CAF4261381D300FE3EEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DateFormatterTest;
+			packageProductDependencies = (
+				BB48CB13261397D400FE3EEC /* RxSwift */,
+				BB48CB15261397D400FE3EEC /* RxCocoa */,
+				BB48CB17261397D400FE3EEC /* RxRelay */,
+			);
+			productName = DateFormatterTest;
+			productReference = BB48CAF6261381D300FE3EEC /* DateFormatterTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB48CAEE261381D300FE3EEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					BB48CAF5261381D300FE3EEC = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = BB48CAF1261381D300FE3EEC /* Build configuration list for PBXProject "DateFormatterTest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB48CAED261381D300FE3EEC;
+			packageReferences = (
+				BB48CB12261397D400FE3EEC /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
+			productRefGroup = BB48CAF7261381D300FE3EEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB48CAF5261381D300FE3EEC /* DateFormatterTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB48CAF4261381D300FE3EEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB48CB06261381D500FE3EEC /* LaunchScreen.storyboard in Resources */,
+				BB48CB03261381D500FE3EEC /* Assets.xcassets in Resources */,
+				BB48CB01261381D300FE3EEC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB48CAF2261381D300FE3EEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB48CB1C26139EFC00FE3EEC /* DateModel.swift in Sources */,
+				BB48CB0F261381ED00FE3EEC /* DateFormatter+Singleton.swift in Sources */,
+				BB48CAFE261381D300FE3EEC /* ViewController.swift in Sources */,
+				BB48CAFA261381D300FE3EEC /* AppDelegate.swift in Sources */,
+				BB48CAFC261381D300FE3EEC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BB48CAFF261381D300FE3EEC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB48CB00261381D300FE3EEC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BB48CB04261381D500FE3EEC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB48CB05261381D500FE3EEC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BB48CB08261381D500FE3EEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB48CB09261381D500FE3EEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB48CB0B261381D500FE3EEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UL3RBMBKF2;
+				INFOPLIST_FILE = DateFormatterTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gah.DateFormatterTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB48CB0C261381D500FE3EEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UL3RBMBKF2;
+				INFOPLIST_FILE = DateFormatterTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gah.DateFormatterTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB48CAF1261381D300FE3EEC /* Build configuration list for PBXProject "DateFormatterTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB48CB08261381D500FE3EEC /* Debug */,
+				BB48CB09261381D500FE3EEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB48CB0A261381D500FE3EEC /* Build configuration list for PBXNativeTarget "DateFormatterTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB48CB0B261381D500FE3EEC /* Debug */,
+				BB48CB0C261381D500FE3EEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BB48CB12261397D400FE3EEC /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 6.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BB48CB13261397D400FE3EEC /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB48CB12261397D400FE3EEC /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		BB48CB15261397D400FE3EEC /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB48CB12261397D400FE3EEC /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		BB48CB17261397D400FE3EEC /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB48CB12261397D400FE3EEC /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = BB48CAEE261381D300FE3EEC /* Project object */;
+}

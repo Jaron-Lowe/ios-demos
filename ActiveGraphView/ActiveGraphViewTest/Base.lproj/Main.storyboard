@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ActiveGraphViewTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bcr-ns-6G6">
+                                <rect key="frame" x="77" y="286" width="260" height="324"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="blt-Q2-S2l">
+                                        <rect key="frame" x="16" y="16" width="228" height="292"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Pky-CP-LLp">
+                                                <rect key="frame" x="0.0" y="0.0" width="210" height="292"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ky0-ja-4UC" customClass="ActiveGraphView" customModule="ActiveGraphViewTest" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="210" height="12"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="12" id="kYE-h7-u7h"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="oki-Wb-PoO">
+                                                        <rect key="frame" x="0.0" y="47" width="210" height="245"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEs-ue-uMy">
+                                                                <rect key="frame" x="0.0" y="0.0" width="39" height="245"/>
+                                                                <state key="normal" title="1"/>
+                                                                <connections>
+                                                                    <action selector="onePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bC0-4V-qpo"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oI7-K9-8cr">
+                                                                <rect key="frame" x="43" y="0.0" width="38.5" height="245"/>
+                                                                <state key="normal" title="2"/>
+                                                                <connections>
+                                                                    <action selector="twoPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wxT-WO-9LQ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJV-eA-9f1">
+                                                                <rect key="frame" x="85.5" y="0.0" width="39" height="245"/>
+                                                                <state key="normal" title="3"/>
+                                                                <connections>
+                                                                    <action selector="threePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hbP-VU-Sam"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anb-hZ-wsz">
+                                                                <rect key="frame" x="128.5" y="0.0" width="38.5" height="245"/>
+                                                                <state key="normal" title="4"/>
+                                                                <connections>
+                                                                    <action selector="fourPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K7g-4b-BLy"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAr-IF-pcc">
+                                                                <rect key="frame" x="171" y="0.0" width="39" height="245"/>
+                                                                <state key="normal" title="5"/>
+                                                                <connections>
+                                                                    <action selector="fivePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gar-aO-xfL"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97J-Uk-8Wt" customClass="ActiveGraphView" customModule="ActiveGraphViewTest" customModuleProvider="target">
+                                                <rect key="frame" x="220" y="0.0" width="8" height="292"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="8" id="9JW-88-bqG"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1803921568627451" alpha="0.78741994844812924" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="blt-Q2-S2l" secondAttribute="trailing" constant="16" id="PGs-U9-lmT"/>
+                                    <constraint firstAttribute="bottom" secondItem="blt-Q2-S2l" secondAttribute="bottom" constant="16" id="cYY-D6-21B"/>
+                                    <constraint firstAttribute="width" constant="260" id="foF-da-HCC"/>
+                                    <constraint firstItem="blt-Q2-S2l" firstAttribute="leading" secondItem="Bcr-ns-6G6" secondAttribute="leading" constant="16" id="nJL-Pu-4l0"/>
+                                    <constraint firstItem="blt-Q2-S2l" firstAttribute="top" secondItem="Bcr-ns-6G6" secondAttribute="top" constant="16" id="x69-fC-ddq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Bcr-ns-6G6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OIA-EH-GqJ"/>
+                            <constraint firstItem="Bcr-ns-6G6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rEa-0p-Prw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="horizontalActiveGraph" destination="ky0-ja-4UC" id="1Yl-Gv-kue"/>
+                        <outlet property="verticalActiveGraph" destination="97J-Uk-8Wt" id="SM7-gb-fE7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42" y="94"/>
+        </scene>
+    </scenes>
+</document>
