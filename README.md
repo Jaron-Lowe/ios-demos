@@ -7,4 +7,5 @@ A collection of various iOS demos and experiments I've created over time.
 #### [ActiveGraphView](/ActiveGraphView)
 #### [DateFormatterPerformance](/DateFormatterPerformance)
 #### [MulticoloredAttributedString](/MulticoloredAttributedString)
+#### [TabSegmentedControl](/TabSegmentedControl)
 #### [ViewSlideAnimator](/ViewSlideAnimator)
