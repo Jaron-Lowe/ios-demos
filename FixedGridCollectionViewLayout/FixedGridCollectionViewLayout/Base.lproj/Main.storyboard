@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FixedGridCollectionViewLayout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8gn-qG-coE">
+                                <rect key="frame" x="8" y="357" width="398" height="182"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="150" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X2C-VQ-LhL" customClass="SelfSizedCollectionView" customModule="FixedGridCollectionViewLayout" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="16" width="366" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewLayout key="collectionViewLayout" id="p2L-6T-GkB" customClass="FixedGridCollectionViewLayout" customModule="FixedGridCollectionViewLayout" customModuleProvider="target">
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="columnCount">
+                                                    <integer key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
+                                                    <real key="value" value="40"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="itemSpacing">
+                                                    <real key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="lineSpacing">
+                                                    <real key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="shouldShowItemSeparators" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="shouldShowLineSeparators" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="itemSeparatorRatio">
+                                                    <real key="value" value="0.80000000000000004"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </collectionViewLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="7rI-Jx-pcj" customClass="TestCell" customModule="FixedGridCollectionViewLayout" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Bdd-vl-OuO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xVC-eQ-a6C">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="38.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM3-yI-0hB">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="14.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUE-vH-9hV">
+                                                                    <rect key="frame" x="0.0" y="14.5" width="50" height="24"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="xVC-eQ-a6C" secondAttribute="trailing" id="D8P-HY-XSJ"/>
+                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xVC-eQ-a6C" secondAttribute="bottom" id="N7P-pa-J33"/>
+                                                        <constraint firstItem="xVC-eQ-a6C" firstAttribute="leading" secondItem="Bdd-vl-OuO" secondAttribute="leading" id="SMB-qv-2lK"/>
+                                                        <constraint firstItem="xVC-eQ-a6C" firstAttribute="top" secondItem="Bdd-vl-OuO" secondAttribute="top" id="rtI-JF-kdN"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="zli-zg-VYn"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="X2C-VQ-LhL" secondAttribute="trailing" constant="16" id="1YF-WS-com"/>
+                                    <constraint firstAttribute="bottom" secondItem="X2C-VQ-LhL" secondAttribute="bottom" constant="16" id="NOx-iN-rXl"/>
+                                    <constraint firstItem="X2C-VQ-LhL" firstAttribute="leading" secondItem="8gn-qG-coE" secondAttribute="leading" constant="16" id="c3H-pa-8bb"/>
+                                    <constraint firstItem="X2C-VQ-LhL" firstAttribute="top" secondItem="8gn-qG-coE" secondAttribute="top" constant="16" id="pjL-TN-UCA"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CAP-28-P2r">
+                                <rect key="frame" x="8" y="791" width="398" height="63"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHX-ob-x6H">
+                                        <rect key="frame" x="16" y="16" width="366" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Randomize Cell Count"/>
+                                        <connections>
+                                            <action selector="randomizeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9bA-ck-452"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="PHX-ob-x6H" firstAttribute="leading" secondItem="CAP-28-P2r" secondAttribute="leading" constant="16" id="AFS-AS-VSs"/>
+                                    <constraint firstAttribute="trailing" secondItem="PHX-ob-x6H" secondAttribute="trailing" constant="16" id="Vja-5e-AIh"/>
+                                    <constraint firstAttribute="bottom" secondItem="PHX-ob-x6H" secondAttribute="bottom" constant="16" id="pOa-Ac-7rZ"/>
+                                    <constraint firstItem="PHX-ob-x6H" firstAttribute="top" secondItem="CAP-28-P2r" secondAttribute="top" constant="16" id="ymW-S2-Suo"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CAP-28-P2r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="8iT-2j-Dv0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8gn-qG-coE" secondAttribute="trailing" constant="8" id="FaP-6a-ap2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CAP-28-P2r" secondAttribute="bottom" constant="8" id="Pwe-KS-wmz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CAP-28-P2r" secondAttribute="trailing" constant="8" id="abC-wJ-kvO"/>
+                            <constraint firstItem="8gn-qG-coE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="gd2-uz-UBL"/>
+                            <constraint firstItem="CAP-28-P2r" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8gn-qG-coE" secondAttribute="bottom" constant="8" id="tNp-Tq-Ai1"/>
+                            <constraint firstItem="8gn-qG-coE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" priority="250" id="u3x-9S-AUP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="X2C-VQ-LhL" id="sI5-EC-KWL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
