@@ -7,6 +7,7 @@ A collection of various iOS demos and experiments I've created over time.
 #### [ActiveGraphView](/ActiveGraphView)
 #### [ApolloGraphqlTestbed](/ApolloGraphqlTest)
 #### [DateFormatterPerformance](/DateFormatterPerformance)
+#### [FeaturedCollectionViewLayout](/FeaturedCollectionViewLayout)
 #### [MulticoloredAttributedString](/MulticoloredAttributedString)
 #### [TabSegmentedControl](/TabSegmentedControl)
 #### [ViewSlideAnimator](/ViewSlideAnimator)
