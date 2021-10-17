@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB1F8B38271CDAAF00A465F0 /* GameStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1F8B37271CDAAF00A465F0 /* GameStateMachine.swift */; };
+		BB1F8B3B271CE21D00A465F0 /* SelfSizedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1F8B3A271CE21D00A465F0 /* SelfSizedCollectionView.swift */; };
+		BB1F8B3D271CE22400A465F0 /* FixedGridCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1F8B3C271CE22400A465F0 /* FixedGridCollectionViewLayout.swift */; };
+		BB1F8B3F271CE61400A465F0 /* TicTacToeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1F8B3E271CE61400A465F0 /* TicTacToeCollectionViewCell.swift */; };
+		BB1F8B41271CEC0300A465F0 /* IndexPath+ColumnBreakdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1F8B40271CEC0300A465F0 /* IndexPath+ColumnBreakdown.swift */; };
 		BBB6A89827178AB400F7B18A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6A89727178AB400F7B18A /* AppDelegate.swift */; };
 		BBB6A89A27178AB400F7B18A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6A89927178AB400F7B18A /* SceneDelegate.swift */; };
 		BBB6A89C27178AB400F7B18A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6A89B27178AB400F7B18A /* ViewController.swift */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB1F8B37271CDAAF00A465F0 /* GameStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateMachine.swift; sourceTree = "<group>"; };
+		BB1F8B3A271CE21D00A465F0 /* SelfSizedCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelfSizedCollectionView.swift; path = ../../FixedGridCollectionViewLayout/FixedGridCollectionViewLayout/SelfSizedCollectionView.swift; sourceTree = "<group>"; };
+		BB1F8B3C271CE22400A465F0 /* FixedGridCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FixedGridCollectionViewLayout.swift; path = ../../FixedGridCollectionViewLayout/FixedGridCollectionViewLayout/Source/FixedGridCollectionViewLayout.swift; sourceTree = "<group>"; };
+		BB1F8B3E271CE61400A465F0 /* TicTacToeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeCollectionViewCell.swift; sourceTree = "<group>"; };
+		BB1F8B40271CEC0300A465F0 /* IndexPath+ColumnBreakdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndexPath+ColumnBreakdown.swift"; sourceTree = "<group>"; };
 		BBB6A89427178AB400F7B18A /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBB6A89727178AB400F7B18A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBB6A89927178AB400F7B18A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +59,15 @@
 			name = Garbage;
 			sourceTree = "<group>";
 		};
+		BB1F8B39271CE20400A465F0 /* CollectionView Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BB1F8B3C271CE22400A465F0 /* FixedGridCollectionViewLayout.swift */,
+				BB1F8B3A271CE21D00A465F0 /* SelfSizedCollectionView.swift */,
+			);
+			name = "CollectionView Helpers";
+			sourceTree = "<group>";
+		};
 		BBB6A88B27178AB300F7B18A = {
 			isa = PBXGroup;
 			children = (
@@ -68,9 +87,13 @@
 		BBB6A89627178AB400F7B18A /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				BB1F8B39271CE20400A465F0 /* CollectionView Helpers */,
 				BB1F8B36271CCFA700A465F0 /* Garbage */,
-				BBB6A89B27178AB400F7B18A /* ViewController.swift */,
 				BBB6A89D27178AB400F7B18A /* Main.storyboard */,
+				BB1F8B37271CDAAF00A465F0 /* GameStateMachine.swift */,
+				BB1F8B3E271CE61400A465F0 /* TicTacToeCollectionViewCell.swift */,
+				BBB6A89B27178AB400F7B18A /* ViewController.swift */,
+				BB1F8B40271CEC0300A465F0 /* IndexPath+ColumnBreakdown.swift */,
 			);
 			path = TicTacToe;
 			sourceTree = "<group>";
@@ -147,6 +170,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBB6A89C27178AB400F7B18A /* ViewController.swift in Sources */,
+				BB1F8B3D271CE22400A465F0 /* FixedGridCollectionViewLayout.swift in Sources */,
+				BB1F8B3F271CE61400A465F0 /* TicTacToeCollectionViewCell.swift in Sources */,
+				BB1F8B38271CDAAF00A465F0 /* GameStateMachine.swift in Sources */,
+				BB1F8B3B271CE21D00A465F0 /* SelfSizedCollectionView.swift in Sources */,
+				BB1F8B41271CEC0300A465F0 /* IndexPath+ColumnBreakdown.swift in Sources */,
 				BBB6A89827178AB400F7B18A /* AppDelegate.swift in Sources */,
 				BBB6A89A27178AB400F7B18A /* SceneDelegate.swift in Sources */,
 			);

@@ -8,129 +8,87 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // MARK: Properties
+    
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var resetButton: UIButton!
+    
+    let gameStateMachine = GameStateMachine()
+    
+    // MARK: UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-}
-
-struct Player: Identifiable {
-    
-    let id: Int
-    let name: String
-    
-}
-
-protocol GameStateMachineDelegate: AnyObject {
-    
-    func gameStateMachine(_ gameStateMachine: GameStateMachine, hasChangedState state: GameStateMachine.State)
-    
-}
-
-final class GameStateMachine {
-    
-    let players: [Player]
-    let playerSymbols = ["X", "O"]
-    var positions: [[Int?]] = []
-    var currentState: State = .player1Turn {
-        didSet {
-            delegate?.gameStateMachine(self, hasChangedState: currentState)
-        }
-    }
-    weak var delegate: GameStateMachineDelegate?
-    let winConditions: [[[Int]]] = [
-        [[0, 0], [0, 1], [0, 2]],
-        [[1, 0], [1, 1], [1, 2]],
-        [[2, 0], [2, 1], [2, 2]],
-        [[0, 0], [1, 0], [2, 0]],
-        [[0, 1], [1, 1], [2, 1]],
-    ]
-    
-    init(player1: Player, player2: Player, delegate: GameStateMachineDelegate) {
-        players = [player1, player2]
-        resetGameState()
-    }
-    
-    
-    func resetGameState() {
-        positions = Array(repeating: Array(repeating: nil, count: 3), count: 3)
-        currentState = .player1Turn
-    }
-    
-    func triggerEvent(event: Event) {
-        switch (currentState, event) {
-        case (.player1Turn, .takeTurn(let playerIndex, let x, let y)), (.player2Turn, .takeTurn(let playerIndex, let x, let y)):
-            if isValidTurn(playerIndex: playerIndex, x: x, y: y) {
-                if let gameEndState = takeTurn(playerIndex: playerIndex, x: x, y: y) {
-                    currentState = .gameOver(gameEndState)
-                } else {
-                    if currentState == .player1Turn {
-                        currentState = .player2Turn
-                    } else {
-                        currentState = .player1Turn
-                    }
-                }
-            }
-        case (_, .reset):
-            resetGameState()
-        case (.gameOver(_), _):
-            break
-        }
-    }
-    
-    func isValidTurn(playerIndex: Int, x: Int, y: Int) -> Bool {
-        return positions[x][y] == nil
-    }
-    
-    func isBoardFull() -> Bool {
-        for row in positions {
-            for column in row {
-            }
-        }
-        return true
-    }
-    
-    func indexOfWinningPlayer(playerIndex: Int) -> Int? {
-        for condition in winConditions {
-            for point in condition {
-                
-            }
-        }
-        return nil
-    }
-    
-    // TODO: Win conditions
-    
-    func takeTurn(playerIndex: Int, x: Int, y: Int) -> GameEndState? {
-        positions[x][y] = playerIndex
         
-        // TODO: Determine if game is over.
-            // TODO: Check for win
-            // TODO: Check board full
-        return nil
+        gameStateMachine.delegate = self
+        collectionView.dataSource = self
+        collectionView.delegate = self
+    }
+    
+    // MARK: IBActions
+    
+    @IBAction func resetButtonPressed(_ sender: UIButton) {
+        gameStateMachine.triggerEvent(event: .reset)
+    }
+    
+
+}
+
+// MARK: - Private Methods
+
+private extension ViewController {
+    
+    func displayGameOverAlert(endState: GameStateMachine.GameEndState) {
+        let alert = UIAlertController(title: "Game Over", message: endState.title, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "New Game", style: .default, handler: { [weak self] _ in
+            self?.gameStateMachine.triggerEvent(event: .reset)
+        }))
+        
+        present(alert, animated: true)
     }
     
 }
 
-extension GameStateMachine {
+// MARK: - GameStateMachineDelegate
+
+extension ViewController: GameStateMachineDelegate {
     
-    enum State: Equatable {
-        case player1Turn
-        case player2Turn
-        case gameOver(GameEndState)
-    }
-    
-    enum Event {
-        case takeTurn(playerIndex: Int, x: Int, y: Int)
-        case reset
+    func gameStateMachine(_ gameStateMachine: GameStateMachine, hasChangedState state: GameStateMachine.State) {
+        statusLabel.text = state.title
+        if case .gameOver(let endState) = state {
+            displayGameOverAlert(endState: endState)
+        }
+        collectionView.reloadData()
     }
     
 }
 
-enum GameEndState: Equatable {
+// MARK: - UICollectionViewDataSource, UICollectionViewDelegate
+
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
-    case tie
-    case playerWin(playerIndex: Int)
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 9
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicTacToeCollectionViewCell.identifier, for: indexPath) as? TicTacToeCollectionViewCell else {
+            fatalError("Could not dequeue expected cell.")
+        }
+        
+        let (x, y) = indexPath.columnBreakdown(columnCount: 3)
+        
+        let value = gameStateMachine.positions[x][y]
+        cell.titleLabel.text = (value == nil) ? "" : (value! == 0) ? "X" : "O"
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let (x, y) = indexPath.columnBreakdown(columnCount: 3)
+        gameStateMachine.triggerEvent(event: .takeTurn(turn: GameStateMachine.GameTurn(x: x, y: y)))
+    }
     
 }
