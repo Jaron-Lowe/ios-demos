@@ -25,6 +25,7 @@ enum Gender {
 struct Person {
     let imageUrl: String
     let gender: Gender
+    let age: Int
     let firstName: String
     let lastName: String
     

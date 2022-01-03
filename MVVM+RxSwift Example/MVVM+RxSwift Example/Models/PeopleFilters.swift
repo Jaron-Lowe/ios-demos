@@ -51,6 +51,26 @@ enum AgeFilterOption: CaseIterable {
             return "68+"
         }
     }
+    
+    var value: ClosedRange<Int> {
+        switch self {
+        case .any:
+            return 0...Int.max
+        case .range18To27:
+            return 18...27
+        case .range28To37:
+            return 28...37
+        case .range38To47:
+            return 38...47
+        case .range48To57:
+            return 48...57
+        case .range58To67:
+            return 58...67
+        case .range68Plus:
+            return 68...Int.max
+        }
+    }
+    
 }
 
 struct PeopleFilters {

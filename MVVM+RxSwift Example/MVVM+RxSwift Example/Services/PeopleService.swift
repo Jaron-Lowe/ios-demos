@@ -16,21 +16,21 @@ final class PeopleService: PeopleServicing {
     
     func getPeople(filters: PeopleFilters) -> Single<Result<[Person], Error>> {
         return Single.just(())
-            .delay(.milliseconds(Int.random(in: 2000...4000)), scheduler: MainScheduler.instance)
+            .delay(.milliseconds(Int.random(in: 1000...2500)), scheduler: MainScheduler.instance)
             .map {
-                if Bool.random() {
-                    let people: [Person]
-                    switch filters.gender {
-                    case .any:
-                        people = DummyData.people
-                    case .male:
-                        people = DummyData.people.filter { $0.gender == .male }
-                    case .female:
-                        people = DummyData.people.filter { $0.gender == .female }
-                    }
-                    return .success(people)
+                var people: [Person]
+                switch filters.gender {
+                case .any:
+                    people = DummyData.people
+                case .male:
+                    people = DummyData.people.filter { $0.gender == .male }
+                case .female:
+                    people = DummyData.people.filter { $0.gender == .female }
                 }
-                else { return .failure(PeopleServiceError.general) }
+                
+                people = people.filter { filters.age.value ~= $0.age }
+                
+                return .success(people)
             }
     }
     

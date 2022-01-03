@@ -9,10 +9,13 @@ import Foundation
 import RxSwift
 import RxRelay
 import RxCocoa
+import XCoordinator
 
 final class FiltersViewModel {
     
     // MARK: Properties
+    private let router: WeakRouter<AppRoute>
+    private let filtersBridgeRelay: BehaviorRelay<PeopleFilters>
     
     private let isFriendsOnly = BehaviorRelay(value: false)
     private let isOnlineOnly = BehaviorRelay(value: false)
@@ -28,8 +31,43 @@ final class FiltersViewModel {
     
     // MARK: Init
     
-    init(filters: PeopleFilters = .defaultFilters) {
-        applyFilterModel(filters: filters)
+    init(router: WeakRouter<AppRoute>, filtersBridgeRelay: BehaviorRelay<PeopleFilters>) {
+        self.router = router
+        self.filtersBridgeRelay = filtersBridgeRelay
+        applyFilterModel(filters: filtersBridgeRelay.value)
+    }
+    
+}
+
+// MARK: - ViewModel
+
+extension FiltersViewModel: ViewModel {
+    
+    struct Inputs {
+        let friendsOnlyButtonTaps: Observable<Void>
+        let onlineOnlyButtonTaps: Observable<Void>
+        let genderViewSelections: Observable<GenderFilterOption>
+        let ageViewSelections: Observable<AgeFilterOption>
+        let resetButtonTaps: Observable<Void>
+        let applyButtonTaps: Observable<Void>
+    }
+    
+    struct Outputs {
+        let isFriendsOnlySelected: Driver<Bool>
+        let isOnlineOnlySelected: Driver<Bool>
+        let genderDetail: Driver<String>
+        let ageDetail: Driver<String>
+    }
+    
+    func transform(_ inputs: Inputs) -> Outputs {
+        setUpActionObservers(inputs: inputs)
+        
+        return Outputs(
+            isFriendsOnlySelected: isFriendsOnly.asDriver(onErrorJustReturn: false),
+            isOnlineOnlySelected: isOnlineOnly.asDriver(onErrorJustReturn: false),
+            genderDetail: gender.map { $0.title }.asDriver(onErrorJustReturn: ""),
+            ageDetail: age.map { $0.title }.asDriver(onErrorJustReturn: "")
+        )
     }
     
 }
@@ -45,12 +83,16 @@ private extension FiltersViewModel {
         age.accept(filters.age)
     }
     
+    
+    // MARK: Actions
+    
     func setUpActionObservers(inputs: Inputs) {
         setUpFriendsOnlyButtonTapsObserver(inputs: inputs)
         setUpOnlineOnlyButtonTapsObserver(inputs: inputs)
         setUpGenderSelectionObserver(inputs: inputs)
         setUpAgeSelectionObserver(inputs: inputs)
         setUpResetTapObserver(inputs: inputs)
+        setUpApplyTapObserver(inputs: inputs)
     }
     
     func setUpFriendsOnlyButtonTapsObserver(inputs: Inputs) {
@@ -91,47 +133,22 @@ private extension FiltersViewModel {
             .disposed(by: disposeBag)
     }
     
-    func processFormSubmissions(inputs: Inputs) -> Driver<PeopleFilters> {
-        return inputs.applyButtonTaps.withLatestFrom(formData).asDriver(onErrorJustReturn: .defaultFilters)
+    func setUpApplyTapObserver(inputs: Inputs) {
+        inputs.applyButtonTaps
+            .withLatestFrom(formData)
+            .subscribe(onNext: {[weak self] filters in
+                self?.submitForm(filters: filters)
+            })
+            .disposed(by: disposeBag)
     }
     
     func resetFilters() {
         applyFilterModel(filters: .defaultFilters)
     }
     
-}
-
-// MARK: - ViewModel
-
-extension FiltersViewModel: ViewModel {
-    
-    struct Inputs {
-        let friendsOnlyButtonTaps: Observable<Void>
-        let onlineOnlyButtonTaps: Observable<Void>
-        let genderViewSelections: Observable<GenderFilterOption>
-        let ageViewSelections: Observable<AgeFilterOption>
-        let resetButtonTaps: Observable<Void>
-        let applyButtonTaps: Observable<Void>
-    }
-    
-    struct Outputs {
-        let isFriendsOnlySelected: Driver<Bool>
-        let isOnlineOnlySelected: Driver<Bool>
-        let genderDetail: Driver<String>
-        let ageDetail: Driver<String>
-        let submittedFormData: Driver<PeopleFilters>
-    }
-    
-    func transform(_ inputs: Inputs) -> Outputs {
-        setUpActionObservers(inputs: inputs)
-        
-        return Outputs(
-            isFriendsOnlySelected: isFriendsOnly.asDriver(onErrorJustReturn: false),
-            isOnlineOnlySelected: isOnlineOnly.asDriver(onErrorJustReturn: false),
-            genderDetail: gender.map { $0.title }.asDriver(onErrorJustReturn: ""),
-            ageDetail: age.map { $0.title }.asDriver(onErrorJustReturn: ""),
-            submittedFormData: processFormSubmissions(inputs: inputs)
-        )
+    func submitForm(filters: PeopleFilters) {
+        filtersBridgeRelay.accept(filters)
+        router.trigger(.filtersDone)
     }
     
 }

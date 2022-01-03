@@ -213,6 +213,7 @@ final class DummyData {
         return Person(
             imageUrl: randomFemaleProfilePicture(),
             gender: .female,
+            age: Int.random(in: 18...85),
             firstName: randomFemaleFirstName(),
             lastName: randomLastName()
         )
@@ -221,6 +222,7 @@ final class DummyData {
         return Person(
             imageUrl: randomMaleProfilePicture(),
             gender: .male,
+            age: Int.random(in: 18...85),
             firstName: randomMaleFirstName(),
             lastName: randomLastName()
         )

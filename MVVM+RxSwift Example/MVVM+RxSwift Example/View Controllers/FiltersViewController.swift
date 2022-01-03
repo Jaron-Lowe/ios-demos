@@ -24,12 +24,7 @@ class FiltersViewController: UIViewController {
     @IBOutlet private var applyButton: UIButton!
     
     let disposeBag = DisposeBag()
-    private let viewModel = FiltersViewModel()
-    
-    private let selectedFiltersRelay: PublishRelay<PeopleFilters> = PublishRelay()
-    var selectedFilters: Observable<PeopleFilters> {
-        return selectedFiltersRelay.asObservable()
-    }
+    var viewModel: FiltersViewModel!
     
     // MARK: UIViewController
     
@@ -53,31 +48,26 @@ private extension FiltersViewController {
                 UIAlertController.rx.presentAlert(
                     viewController: self,
                     title: "Gender", message: nil, preferredStyle: .actionSheet, popoverView: self?.genderView, popoverDirection: .up, animated: true,
-                    actions: GenderFilterOption.allCases.map { RxAlertAction(title: $0.title, style: .default, result: $0) }
+                    actions: GenderFilterOption.allCases.map { RxAlertAction(title: $0.title, style: .default, result: $0) } + [RxAlertAction.cancelAction(title: "Cancel")]
                 )
             },
             ageViewSelections: ageView.rx.tapGesture().when(.recognized).flatMapLatest { [weak self] _ in
                 UIAlertController.rx.presentAlert(
                     viewController: self,
                     title: "Age", message: nil, preferredStyle: .actionSheet, popoverView: self?.ageView, popoverDirection: .up, animated: true,
-                    actions: AgeFilterOption.allCases.map { RxAlertAction(title: $0.title, style: .default, result: $0) }
+                    actions: AgeFilterOption.allCases.map { RxAlertAction(title: $0.title, style: .default, result: $0) } + [RxAlertAction.cancelAction(title: "Cancel")]
                 )
             },
             resetButtonTaps: resetButton.rx.tap.mapToVoid(),
             applyButtonTaps: applyButton.rx.tap.mapToVoid()
         ))
         
-        outputs.isFriendsOnlySelected.drive(friendsOnlyButton.rx.isSelected).disposed(by: disposeBag)
-        outputs.isOnlineOnlySelected.drive(onlineOnlyButton.rx.isSelected).disposed(by: disposeBag)
-        outputs.genderDetail.drive(genderDetailLabel.rx.text).disposed(by: disposeBag)
-        outputs.ageDetail.drive(ageDetailLabel.rx.text).disposed(by: disposeBag)
-        outputs.submittedFormData
-            .drive(onNext: { [weak self] formData in
-                guard let self = self else { return }
-                self.selectedFiltersRelay.accept(formData)
-                self.dismiss(animated: true)
-            })
-            .disposed(by: disposeBag)
+        disposeBag.insert([
+            outputs.isFriendsOnlySelected.drive(friendsOnlyButton.rx.isSelected),
+            outputs.isOnlineOnlySelected.drive(onlineOnlyButton.rx.isSelected),
+            outputs.genderDetail.drive(genderDetailLabel.rx.text),
+            outputs.ageDetail.drive(ageDetailLabel.rx.text)
+        ])
     }
     
 }

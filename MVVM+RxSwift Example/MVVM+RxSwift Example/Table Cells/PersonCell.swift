@@ -30,7 +30,7 @@ final class PersonCell: UITableViewCell {
         } else { pictureImageView.image = nil }
         
         titleLabel.text = model.fullName
-        detailLabel.text = model.gender.title
+        detailLabel.text = "\(model.gender.title) (\(model.age))"
     }
     
 }

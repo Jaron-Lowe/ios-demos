@@ -10,24 +10,23 @@ import RxSwift
 import RxRelay
 import RxCocoa
 import XCoordinator
+import XCoordinatorRx
 
 final class PeopleListViewModel {
     
     // MARK: Properties
     private let router: WeakRouter<AppRoute>
+    private let peopleService: PeopleServicing
     
     private let filtersRelay: BehaviorRelay<PeopleFilters> = BehaviorRelay(value: .defaultFilters)
-    private let isLoadingRelay = BehaviorRelay(value: false)
-    
-    private let peopleService: PeopleServicing = PeopleService()
     
     private let disposeBag = DisposeBag()
     
     // MARK: Init
     
-    init(router: WeakRouter<AppRoute>) {
-        // TODO: peopleService SHOULD be dependency injected here in a real project
+    init(router: WeakRouter<AppRoute>, peopleService: PeopleServicing) {
         self.router = router
+        self.peopleService = peopleService
     }
     
 }
@@ -58,20 +57,12 @@ extension PeopleListViewModel: ViewModel {
     }
     
     func transform(_ inputs: Inputs) -> Outputs {
-        inputs.filterButtonTaps
-            .flatMapFirst { [router = self.router] _ in
-                router.rx.trigger(.filters)
-            }
-            .subscribe(onNext: { _ in
-                print("Navigated")
-            })
-            .disposed(by: disposeBag)
-        
         let fetchPeopleObservable = fetchPeople(inputs: inputs)
         let tableData = tableItems(fetchObservable: fetchPeopleObservable)
+        setUpActions(inputs: inputs)
         
         return Outputs(
-            loadingIndicatorIsHidden: loadingIndicatorIsHidden(inputs: inputs),
+            loadingIndicatorIsHidden: loadingIndicatorIsHidden(inputs: inputs, fetchObservable: fetchPeopleObservable),
             tableItems: tableData,
             emptyLabelIsHidden: emptyLabelIsHidden(tableItems: tableData),
             errorToDisplay: errorToDisplay(fetchObservable: fetchPeopleObservable)
@@ -84,39 +75,41 @@ extension PeopleListViewModel: ViewModel {
 
 private extension PeopleListViewModel {
     
-    func loadingIndicatorIsHidden(inputs: Inputs) -> Driver<Bool> {
-        return isLoadingRelay
-            .map { !$0 }
-            .asDriver(onErrorJustReturn: false)
-    }
+    // MARK: Actions
     
-    /*
-    func filters(inputs: Inputs) -> Observable<PeopleFilters> {
-        return inputs.filterButtonTaps
-            .flatMapLatest {
-                
-            }
-            .scan(PeopleFilters.defaultFilters, accumulator: { _, filters in
-                
+    func setUpActions(inputs: Inputs) {
+        inputs.filterButtonTaps
+            .subscribe(onNext: {[weak self] _ in
+                self?.triggerFiltersRoute()
             })
+            .disposed(by: disposeBag)
     }
     
-    func triggerFiltersRoute() -> Observable<PeopleFilters> {
-        return .just(.defaultFilters)
+    func triggerFiltersRoute() {
+        router.trigger(.filters(filtersRelay))
     }
-    */
+    
+    // MARK: Partial Observables
     
     func fetchPeople(inputs: Inputs) -> Observable<Result<[Person], Error>> {
         return Observable.merge(filtersRelay.mapToVoid(), inputs.tableRefreshes)
             .withLatestFrom(filtersRelay)
-            .do(onNext: { [weak self] _ in self?.isLoadingRelay.accept(true) })
             .flatMapLatest { [peopleService = self.peopleService] filters in
                 peopleService.getPeople(filters: filters)
             }
-            .do(onNext: { [weak self] _ in self?.isLoadingRelay.accept(false) })
             .share()
     }
-        
+
+    // MARK: Drivers
+    
+    func loadingIndicatorIsHidden(inputs: Inputs, fetchObservable: Observable<Result<[Person], Error>>) -> Driver<Bool> {
+        return Observable.merge(
+            Observable.merge(filtersRelay.mapToVoid(), inputs.tableRefreshes).map { _ in return false },
+            fetchObservable.map { _ in return true }
+        )
+            .asDriver(onErrorJustReturn: false)
+    }
+    
     func tableItems(fetchObservable: Observable<Result<[Person], Error>>) -> Driver<[Person]> {
         return fetchObservable
             .map { result in

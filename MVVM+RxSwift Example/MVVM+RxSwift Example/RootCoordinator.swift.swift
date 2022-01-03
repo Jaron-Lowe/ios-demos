@@ -7,10 +7,12 @@
 
 import UIKit
 import XCoordinator
+import RxRelay
 
 enum AppRoute: Route {
     case peopleList
-    case filters
+    case filters(BehaviorRelay<PeopleFilters>)
+    case filtersDone
 }
 
 final class RootCoordinator: NavigationCoordinator<AppRoute> {
@@ -27,8 +29,10 @@ final class RootCoordinator: NavigationCoordinator<AppRoute> {
         switch route {
         case .peopleList:
             return .push(makePeopleListController())
-        case .filters:
-            return .present(makeFiltersController())
+        case .filters(let filtersBridgeRelay):
+            return .present(makeFiltersController(filtersBridgeRelay: filtersBridgeRelay))
+        case .filtersDone:
+            return .dismiss()
         }
     }
 }
@@ -45,12 +49,13 @@ private extension RootCoordinator {
     
     func makePeopleListController() -> PeopleListViewController {
         let controller: PeopleListViewController = makeController()
-        controller.viewModel = PeopleListViewModel(router: weakRouter)
+        controller.viewModel = PeopleListViewModel(router: weakRouter, peopleService: PeopleService())
         return controller
     }
     
-    func makeFiltersController() -> FiltersViewController {
+    func makeFiltersController(filtersBridgeRelay: BehaviorRelay<PeopleFilters>) -> FiltersViewController {
         let controller: FiltersViewController = makeController()
+        controller.viewModel = FiltersViewModel(router: weakRouter, filtersBridgeRelay: filtersBridgeRelay)
         return controller
     }
 }

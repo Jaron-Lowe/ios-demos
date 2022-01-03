@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB3C7C432750547C00F15DD6 /* XCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = BB3C7C422750547C00F15DD6 /* XCoordinator */; };
-		BB3C7C452750547C00F15DD6 /* XCoordinatorRx in Frameworks */ = {isa = PBXBuildFile; productRef = BB3C7C442750547C00F15DD6 /* XCoordinatorRx */; };
+		BB2F892A2780AA5D00C10E75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB2F89292780AA5D00C10E75 /* Images.xcassets */; };
 		BB3C7C47275054BC00F15DD6 /* RootCoordinator.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C7C46275054BC00F15DD6 /* RootCoordinator.swift.swift */; };
 		BB665EC8274B40360012B2C5 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB665EC7274B40360012B2C5 /* PersonCell.swift */; };
 		BB858EF5274C8E8600618232 /* MapToVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB858EF4274C8E8600618232 /* MapToVoid.swift */; };
@@ -20,10 +19,12 @@
 		BBB8F91C274744E60060691E /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = BBB8F91B274744E60060691E /* Nuke */; };
 		BBB8F91F274745B80060691E /* PeopleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB8F91E274745B80060691E /* PeopleService.swift */; };
 		BBB8F92127474A630060691E /* ViewModel.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB8F92027474A630060691E /* ViewModel.swift.swift */; };
+		BBC96971275AC86A008C19F7 /* XCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = BBC96970275AC86A008C19F7 /* XCoordinator */; };
+		BBC96973275AC86A008C19F7 /* XCoordinatorRx in Frameworks */ = {isa = PBXBuildFile; productRef = BBC96972275AC86A008C19F7 /* XCoordinatorRx */; };
 		BBD9185D2745754600862C75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9185C2745754600862C75 /* AppDelegate.swift */; };
 		BBD918612745754600862C75 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD918602745754600862C75 /* FiltersViewController.swift */; };
 		BBD918642745754600862C75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD918622745754600862C75 /* Main.storyboard */; };
-		BBD918662745754800862C75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBD918652745754800862C75 /* Assets.xcassets */; };
+		BBD918662745754800862C75 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBD918652745754800862C75 /* Colors.xcassets */; };
 		BBD918692745754800862C75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD918672745754800862C75 /* LaunchScreen.storyboard */; };
 		BBD9187227457AA100862C75 /* FiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9187127457AA100862C75 /* FiltersViewModel.swift */; };
 		BBD918752745807400862C75 /* UIView+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD918742745807400862C75 /* UIView+RoundedCorners.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB2F89292780AA5D00C10E75 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BB3C7C46275054BC00F15DD6 /* RootCoordinator.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift.swift; sourceTree = "<group>"; };
 		BB665EC7274B40360012B2C5 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		BB858EF4274C8E8600618232 /* MapToVoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapToVoid.swift; sourceTree = "<group>"; };
@@ -49,7 +51,7 @@
 		BBD9185C2745754600862C75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBD918602745754600862C75 /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		BBD918632745754600862C75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BBD918652745754800862C75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BBD918652745754800862C75 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		BBD918682745754800862C75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBD9186A2745754800862C75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBD9187127457AA100862C75 /* FiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModel.swift; sourceTree = "<group>"; };
@@ -62,12 +64,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB3C7C452750547C00F15DD6 /* XCoordinatorRx in Frameworks */,
+				BBC96973275AC86A008C19F7 /* XCoordinatorRx in Frameworks */,
 				BBD918802745850700862C75 /* RxSwift in Frameworks */,
 				BBD9187E2745850700862C75 /* RxRelay in Frameworks */,
 				BBD9188327458A3D00862C75 /* RxGesture in Frameworks */,
 				BBD9187C2745850700862C75 /* RxCocoa in Frameworks */,
-				BB3C7C432750547C00F15DD6 /* XCoordinator in Frameworks */,
+				BBC96971275AC86A008C19F7 /* XCoordinator in Frameworks */,
 				BBB8F91C274744E60060691E /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,7 +158,8 @@
 		BBD918702745759200862C75 /* Garbage */ = {
 			isa = PBXGroup;
 			children = (
-				BBD918652745754800862C75 /* Assets.xcassets */,
+				BB2F89292780AA5D00C10E75 /* Images.xcassets */,
+				BBD918652745754800862C75 /* Colors.xcassets */,
 				BBD918672745754800862C75 /* LaunchScreen.storyboard */,
 				BBD9186A2745754800862C75 /* Info.plist */,
 			);
@@ -195,8 +198,8 @@
 				BBD9187F2745850700862C75 /* RxSwift */,
 				BBD9188227458A3D00862C75 /* RxGesture */,
 				BBB8F91B274744E60060691E /* Nuke */,
-				BB3C7C422750547C00F15DD6 /* XCoordinator */,
-				BB3C7C442750547C00F15DD6 /* XCoordinatorRx */,
+				BBC96970275AC86A008C19F7 /* XCoordinator */,
+				BBC96972275AC86A008C19F7 /* XCoordinatorRx */,
 			);
 			productName = "MVVM+RxSwift Example";
 			productReference = BBD918592745754600862C75 /* MVVM+RxSwift Example.app */;
@@ -230,7 +233,7 @@
 				BBD9187A2745850700862C75 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				BBD9188127458A3D00862C75 /* XCRemoteSwiftPackageReference "RxGesture" */,
 				BBB8F91A274744E60060691E /* XCRemoteSwiftPackageReference "Nuke" */,
-				BB3C7C412750547C00F15DD6 /* XCRemoteSwiftPackageReference "XCoordinator" */,
+				BBC9696F275AC86A008C19F7 /* XCRemoteSwiftPackageReference "XCoordinator" */,
 			);
 			productRefGroup = BBD9185A2745754600862C75 /* Products */;
 			projectDirPath = "";
@@ -247,7 +250,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBD918692745754800862C75 /* LaunchScreen.storyboard in Resources */,
-				BBD918662745754800862C75 /* Assets.xcassets in Resources */,
+				BB2F892A2780AA5D00C10E75 /* Images.xcassets in Resources */,
+				BBD918662745754800862C75 /* Colors.xcassets in Resources */,
 				BBD918642745754600862C75 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +424,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UL3RBMBKF2;
@@ -450,6 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UL3RBMBKF2;
@@ -499,20 +505,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BB3C7C412750547C00F15DD6 /* XCRemoteSwiftPackageReference "XCoordinator" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/quickbirdstudios/XCoordinator.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		BBB8F91A274744E60060691E /* XCRemoteSwiftPackageReference "Nuke" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 9.0.0;
+			};
+		};
+		BBC9696F275AC86A008C19F7 /* XCRemoteSwiftPackageReference "XCoordinator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/quickbirdstudios/XCoordinator.git";
+			requirement = {
+				branch = master;
+				kind = branch;
 			};
 		};
 		BBD9187A2745850700862C75 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
@@ -534,20 +540,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BB3C7C422750547C00F15DD6 /* XCoordinator */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BB3C7C412750547C00F15DD6 /* XCRemoteSwiftPackageReference "XCoordinator" */;
-			productName = XCoordinator;
-		};
-		BB3C7C442750547C00F15DD6 /* XCoordinatorRx */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BB3C7C412750547C00F15DD6 /* XCRemoteSwiftPackageReference "XCoordinator" */;
-			productName = XCoordinatorRx;
-		};
 		BBB8F91B274744E60060691E /* Nuke */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BBB8F91A274744E60060691E /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = Nuke;
+		};
+		BBC96970275AC86A008C19F7 /* XCoordinator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBC9696F275AC86A008C19F7 /* XCRemoteSwiftPackageReference "XCoordinator" */;
+			productName = XCoordinator;
+		};
+		BBC96972275AC86A008C19F7 /* XCoordinatorRx */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBC9696F275AC86A008C19F7 /* XCRemoteSwiftPackageReference "XCoordinator" */;
+			productName = XCoordinatorRx;
 		};
 		BBD9187B2745850700862C75 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;

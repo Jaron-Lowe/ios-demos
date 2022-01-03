@@ -16,19 +16,16 @@ final class PeopleListViewController: UIViewController {
     @IBOutlet private var filterButton: UIBarButtonItem!
     private lazy var refreshControl: UIRefreshControl = {
         let control = UIRefreshControl()
-        control.tintColor = .white
+        control.tintColor = .label
         return control
     }()
+    @IBOutlet private var loadingIndicatorBackgroundView: UIView!
     @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet private var emptyTableLabel: UILabel!
     @IBOutlet private var tableView: UITableView!
     
     private let disposeBag = DisposeBag()
     var viewModel: PeopleListViewModel!
-    
-    deinit {
-        print("People Controller Deinit")
-    }
     
     // MARK: UIViewController
     
@@ -51,7 +48,7 @@ private extension PeopleListViewController {
             tableRefreshes: refreshControl.rx.controlEvent(.valueChanged).mapToVoid()
         ))
         
-        outputs.loadingIndicatorIsHidden.drive(loadingIndicator.rx.isHidden).disposed(by: disposeBag)
+        outputs.loadingIndicatorIsHidden.drive(loadingIndicatorBackgroundView.rx.isHidden).disposed(by: disposeBag)
         outputs.tableItems
             .do(onNext: { [weak self] _ in self?.refreshControl.endRefreshing() })
             .drive(
@@ -67,16 +64,4 @@ private extension PeopleListViewController {
             .disposed(by: disposeBag)
     }
     
-    func processFilterSelections() -> Observable<PeopleFilters> {
-        // TODO: Figure out how to pass along existing filters.
-        return filterButton.rx.tap
-            .flatMapLatest { [weak self] _ -> Observable<PeopleFilters> in
-                if let controller = self?.storyboard?.instantiateViewController(withIdentifier: "FiltersViewController") as? FiltersViewController {
-                    controller.modalPresentationStyle = .fullScreen
-                    self?.present(controller, animated: true)
-                    return controller.selectedFilters
-                }
-                return Observable.never()
-            }
-    }
 }
