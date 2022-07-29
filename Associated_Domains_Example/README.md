@@ -3,7 +3,7 @@ Example project to showcase Universal Links and Web Credentials working with a c
 Key areas to note are the `Associated_Domains_Example.entitlements` and `SceneDelegate.swift` files.
 
 ## AASA File Example
-The AASA file should be hosted at the root of your domain or in a /.well-known directory. It is important that the AASA file have a MIME type of application/json coming from you server but should **NOT** have a `.json` file extension.
+The AASA file should be hosted at the root of your domain or in a `/.well-known` directory. It is important that the AASA file have a MIME type of application/json coming from you server but should **NOT** have a `.json` file extension.
 
 ```json
 {
