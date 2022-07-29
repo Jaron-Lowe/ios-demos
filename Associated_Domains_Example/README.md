@@ -1,8 +1,9 @@
 # Associated Domains Example
 Example project to showcase Universal Links and Web Credentials working with a client side app.
+Key areas to note are the entitlements file and scene delegate file.
 
 ## AASA File Example
-`
+```json
 {
     "applinks": {
         "details": [
@@ -30,9 +31,20 @@ Example project to showcase Universal Links and Web Credentials working with a c
         ]
     }
 }
-`
+```
 
-TODO: Add Sample Video
+## Universal Links
+
+
+https://user-images.githubusercontent.com/10712389/181789333-8de27669-3954-4787-b4cd-646101f9ad79.mp4
+
+
+## Web Credentials
+
+
+https://user-images.githubusercontent.com/10712389/181789310-6c19d4f0-b016-4d15-9744-9ce272150720.mp4
+
+
 
 ## Topics
 #AssociatedDomains #UniversalLinks #WebCredentials
