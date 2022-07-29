@@ -42,26 +42,44 @@ final class ViewController: UIViewController {
     
     // MARK: Action Methods
     func login() {
+        guard let username = usernameField.text, let password = passwordField.text else { return }
+        
         tryToHideKeyboard()
-        fakeLoginPublisher()
-            .sink { _ in
-                print("Fake Login completed")
-            }
+        fakeLoginPublisher(username: username, password: password)
+            .receive(on: DispatchQueue.main)
+            .sink(
+                receiveCompletion: { _ in },
+                receiveValue: { [weak self] _ in
+                    print("Fake Login completed")
+                    self?.pushNewViewController()
+                }
+            )
             .store(in: &subscriptions)
     }
     
-    func fakeLoginPublisher() -> AnyPublisher<Void, Never> {
-        let subject = PassthroughSubject<Void, Never>()
-        DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 2) {
-            subject.send()
-            subject.send(completion: .finished)
-        }
-        return subject.eraseToAnyPublisher()
+    func fakeLoginPublisher(username: String, password: String) -> AnyPublisher<Void, URLError> {
+        let credentials = LoginCredentials(username: username, password: password)
+        let body = try? JSONEncoder().encode(credentials)
+        let url = URL(string: "https://jaronlowe.com/services/Jeunesse/APITest/login.php")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = body
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .print("--- Login Response")
+            .map { _ in () }
+            .eraseToAnyPublisher()
     }
     
     func tryToHideKeyboard() {
         usernameField.resignFirstResponder()
         passwordField.resignFirstResponder()
+    }
+    
+    func pushNewViewController() {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: "viewcontroller") as? ViewController else { return }
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }
@@ -72,4 +90,9 @@ extension ViewController: UITextFieldDelegate {
         if textField == passwordField { login() }
         return true
     }
+}
+
+struct LoginCredentials: Encodable {
+    let username: String
+    let password: String
 }
