@@ -47,6 +47,10 @@ struct Address: Codable {
     let city: String
     let state: String
     let postalCode: String
+    
+    var isValid: Bool {
+        return !address1.isEmpty && !city.isEmpty && !postalCode.isEmpty
+    }
 }
 
 enum FormElementValue {
@@ -56,8 +60,15 @@ enum FormElementValue {
     case date(Date)
     case currency(Decimal)
 
-    var value: Codable? {
-        return nil
+    var isValid: Bool {
+        switch self {
+        case .radio, .date, .currency:
+            return true
+        case .multiText(let array):
+            return array.first?.isEmpty == false
+        case .address(let address):
+            return address.isValid
+        }
     }
 }
 

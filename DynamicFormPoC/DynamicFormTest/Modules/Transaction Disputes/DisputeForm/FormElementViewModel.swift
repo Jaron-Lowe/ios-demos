@@ -1,10 +1,15 @@
 import Foundation
 
-struct FormElementViewModel: Identifiable {
+class FormElementViewModel: Identifiable, ObservableObject {
     var id: String { return element.key }
     
     let element: Form.Element
     let value: FormElementValue?
+    
+    init(element: Form.Element, value: FormElementValue?) {
+        self.element = element
+        self.value = value
+    }
 }
 
 extension Array where Element == FormElementViewModel {
@@ -15,7 +20,7 @@ extension Array where Element == FormElementViewModel {
     
     var hasAllRequiredValues: Bool {
         for viewModel in self {
-            if viewModel.element.isRequired && viewModel.value == nil { return false }
+            if viewModel.element.isRequired && viewModel.value?.isValid == false { return false }
         }
         return true
     }

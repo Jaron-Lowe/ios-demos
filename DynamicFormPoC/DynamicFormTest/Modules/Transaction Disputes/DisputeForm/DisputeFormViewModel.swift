@@ -67,13 +67,15 @@ private extension DisputeFormViewModel {
     
     // MARK: Compositions
     func formValues(inputs: Inputs) -> AnyPublisher<[String: FormElementValue], Never> {
+        let initialFormValues: [String: FormElementValue] = ["email": .multiText(["example@example.com", ""])]
         return inputs.formValueChanges
-            .scan([String: FormElementValue]()) {
+            .scan(initialFormValues) {
                 var values = $0
                 values[$1.key] = $1.value
                 return values
             }
-            .prepend([:])
+            .prepend(initialFormValues)
+            .print("--- formValues")
             .share()
             .eraseToAnyPublisher()
     }

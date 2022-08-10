@@ -5,7 +5,7 @@ struct MultiTextFormCellView: View {
     private let viewModel: FormElementViewModel
     private let formValueChanges: PassthroughSubject<FormElementValueChange, Never>
     
-    @State var values = [""]
+    @State var values: [String]
     var placeholder = "Value..."
     var addButtonTitle = "+ Add value"
     var keyboardType = UIKeyboardType.default
@@ -22,6 +22,8 @@ struct MultiTextFormCellView: View {
         
         if case .multiText(let values) = viewModel.value {
             self.values = values
+        } else {
+            self.values = [""]
         }
     }
     
