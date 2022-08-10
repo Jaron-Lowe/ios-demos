@@ -5,7 +5,7 @@ struct MultiTextFormCellView: View {
     private let viewModel: FormElementViewModel
     private let formValueChanges: PassthroughSubject<FormElementValueChange, Never>
     
-    @State var values: [String]
+    @State private(set) var values: [String]
     var placeholder = "Value..."
     var addButtonTitle = "+ Add value"
     var keyboardType = UIKeyboardType.default

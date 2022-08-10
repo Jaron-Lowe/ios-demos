@@ -5,14 +5,18 @@ struct TextFormCellView: View {
     private let viewModel: FormElementViewModel
     private let formValueChanges: PassthroughSubject<FormElementValueChange, Never>
     
-    @State private(set) var textValue: String = ""
+    @State private(set) var textValue: String
     
     init(viewModel: FormElementViewModel, formValueChanges: PassthroughSubject<FormElementValueChange, Never>) {
         self.viewModel = viewModel
         self.formValueChanges = formValueChanges
         
-        guard case .multiText(let values) = viewModel.value, let text = values.first else { return }
-        textValue = text
+        if case .multiText(let values) = viewModel.value, let text = values.first {
+            textValue = text
+        } else {
+            textValue = ""
+        }
+        
     }
     
     var body: some View {

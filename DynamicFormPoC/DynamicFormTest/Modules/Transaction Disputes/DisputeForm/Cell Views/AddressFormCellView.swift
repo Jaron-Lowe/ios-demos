@@ -5,12 +5,12 @@ struct AddressFormCellView: View {
     private let viewModel: FormElementViewModel
     private let formValueChanges: PassthroughSubject<FormElementValueChange, Never>
     
-    @State var address1: String
-    @State var address2: String
-    @State var city: String
-    @State var state: String
-    @State var postalCode: String
-    @State var isValid = true
+    @State private(set) var address1: String
+    @State private(set) var address2: String
+    @State private(set) var city: String
+    @State private(set) var state: String
+    @State private(set) var postalCode: String
+    @State private(set) var isValid = true
     
     init(viewModel: FormElementViewModel, formValueChanges: PassthroughSubject<FormElementValueChange, Never>) {
         self.viewModel = viewModel

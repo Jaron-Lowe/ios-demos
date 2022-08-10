@@ -5,7 +5,7 @@ struct EmailFormCellView: View {
     private let viewModel: FormElementViewModel
     private let formValueChanges: PassthroughSubject<FormElementValueChange, Never>
     
-    @State var values: [String]
+    @State private(set) var values: [String]
     
     init(viewModel: FormElementViewModel, formValueChanges: PassthroughSubject<FormElementValueChange, Never>) {
         self.viewModel = viewModel
