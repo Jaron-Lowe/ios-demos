@@ -6,6 +6,7 @@ extension Color {
     static let primary500 = Color(red: 0, green: 0.235, blue: 0.443)
     static let onPrimary500 = Color.white
     static let background = Color(red: 0.964, green: 0.964, blue: 0.964)
+    static let errorRed = Color(red: 0.769, green: 0.086, blue: 0.11)
 }
 
 extension UIColor {
@@ -14,4 +15,5 @@ extension UIColor {
     static let primary500 = UIColor(red: 0, green: 0.235, blue: 0.443, alpha: 1.0)
     static let onPrimary500 = UIColor.white
     static let background = UIColor(red: 0.964, green: 0.964, blue: 0.964, alpha: 1.0)
+    static let errorRed = UIColor(red: 0.769, green: 0.086, blue: 0.11, alpha: 1.0)
 }

@@ -55,10 +55,7 @@ struct AddressFormCellView: View {
                 }
             }
             if !isValid {
-                Text("Please enter a valid address")
-                    .font(.system(size: 13.0))
-                    .fontWeight(.bold)
-                    .foregroundColor(.red)
+                TextFieldErrorView(title: "Please enter a valid address.")
             }
         }
         .frame(maxWidth: .infinity)

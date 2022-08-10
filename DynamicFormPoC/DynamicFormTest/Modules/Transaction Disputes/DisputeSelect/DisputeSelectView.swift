@@ -32,21 +32,7 @@ struct DisputeSelectView: View {
                 Button {
                     disputeOptionTaps.send(option)
                 } label: {
-                    HStack {
-                        VStack(alignment: .leading, spacing: 4.0) {
-                            Text(option.title)
-                                .font(.system(size: 14.0))
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.8)
-                            Text(option.detail)
-                                .font(.system(size: 13.0))
-                                .foregroundColor(.secondary)
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .foregroundColor(.secondary)
-                    }
+                    DisputeCellView(option: option)
                 }
                 .frame(maxWidth: .infinity)
                 .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
@@ -55,6 +41,28 @@ struct DisputeSelectView: View {
             .listStyle(.plain)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+    }
+}
+
+struct DisputeCellView: View {
+    let option: DisputeForm
+    
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 4.0) {
+                Text(option.title)
+                    .font(.system(size: 14.0))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+                Text(option.detail)
+                    .font(.system(size: 13.0))
+                    .foregroundColor(.secondary)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            Spacer()
+            Image(systemName: "chevron.right")
+                .foregroundColor(.secondary)
+        }
     }
 }
 
