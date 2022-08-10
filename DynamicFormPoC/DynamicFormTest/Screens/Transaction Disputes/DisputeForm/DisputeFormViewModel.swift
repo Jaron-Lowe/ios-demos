@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import CombineExt
 
 class DisputeFormViewModel: ObservableObject {
     // MARK: Properties

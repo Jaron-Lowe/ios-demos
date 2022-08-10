@@ -13,10 +13,7 @@
 		4364CA5D289D999E00CBE229 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364CA5C289D999E00CBE229 /* Color.swift */; };
 		4364CA5F289D9C5900CBE229 /* SecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364CA5E289D9C5900CBE229 /* SecondaryButtonStyle.swift */; };
 		4364CA61289DA36200CBE229 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364CA60289DA36200CBE229 /* Form.swift */; };
-		4364CA64289DAF2900CBE229 /* WithLatestFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364CA63289DAF2900CBE229 /* WithLatestFrom.swift */; };
 		4364CA66289DB0F600CBE229 /* FormElementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364CA65289DB0F600CBE229 /* FormElementViewModel.swift */; };
-		4364CA68289DB6C000CBE229 /* DemandBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364CA67289DB6C000CBE229 /* DemandBuffer.swift */; };
-		4364CA6A289DB6CF00CBE229 /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364CA69289DB6CF00CBE229 /* Sink.swift */; };
 		4364CA6C289EBCCE00CBE229 /* DisputeForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364CA6B289EBCCE00CBE229 /* DisputeForm.swift */; };
 		4364CA7328A1600900CBE229 /* DisputeSelectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364CA7228A1600900CBE229 /* DisputeSelectViewModel.swift */; };
 		4364CA7728A1602D00CBE229 /* DisputeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364CA7628A1602D00CBE229 /* DisputeSelectView.swift */; };
@@ -34,6 +31,9 @@
 		437238E6289D7922000F0955 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437238E5289D7922000F0955 /* SceneDelegate.swift */; };
 		437238ED289D7927000F0955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 437238EC289D7927000F0955 /* Assets.xcassets */; };
 		437238F0289D7927000F0955 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 437238EE289D7927000F0955 /* LaunchScreen.storyboard */; };
+		BB11B90C28A3F73500CBE91D /* XCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = BB11B90B28A3F73500CBE91D /* XCoordinator */; };
+		BB11B90F28A3F74E00CBE91D /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = BB11B90E28A3F74E00CBE91D /* SwiftUIX */; };
+		BBFF489F28A3F6620048183E /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = BBFF489E28A3F6620048183E /* CombineExt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,10 +43,7 @@
 		4364CA5C289D999E00CBE229 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4364CA5E289D9C5900CBE229 /* SecondaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyle.swift; sourceTree = "<group>"; };
 		4364CA60289DA36200CBE229 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
-		4364CA63289DAF2900CBE229 /* WithLatestFrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithLatestFrom.swift; sourceTree = "<group>"; };
 		4364CA65289DB0F600CBE229 /* FormElementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormElementViewModel.swift; sourceTree = "<group>"; };
-		4364CA67289DB6C000CBE229 /* DemandBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemandBuffer.swift; sourceTree = "<group>"; };
-		4364CA69289DB6CF00CBE229 /* Sink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sink.swift; sourceTree = "<group>"; };
 		4364CA6B289EBCCE00CBE229 /* DisputeForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisputeForm.swift; sourceTree = "<group>"; };
 		4364CA7228A1600900CBE229 /* DisputeSelectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisputeSelectViewModel.swift; sourceTree = "<group>"; };
 		4364CA7628A1602D00CBE229 /* DisputeSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisputeSelectView.swift; sourceTree = "<group>"; };
@@ -73,6 +70,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB11B90F28A3F74E00CBE91D /* SwiftUIX in Frameworks */,
+				BB11B90C28A3F73500CBE91D /* XCoordinator in Frameworks */,
+				BBFF489F28A3F6620048183E /* CombineExt in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,16 +90,6 @@
 			path = SwiftUI;
 			sourceTree = "<group>";
 		};
-		4364CA62289DAF1600CBE229 /* Combine */ = {
-			isa = PBXGroup;
-			children = (
-				4364CA63289DAF2900CBE229 /* WithLatestFrom.swift */,
-				4364CA67289DB6C000CBE229 /* DemandBuffer.swift */,
-				4364CA69289DB6CF00CBE229 /* Sink.swift */,
-			);
-			path = Combine;
-			sourceTree = "<group>";
-		};
 		4364CA6D28A15DD500CBE229 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,7 +103,6 @@
 			children = (
 				4364CA7E28A1755D00CBE229 /* UIKit */,
 				4364CA7828A1623600CBE229 /* MVVM+C */,
-				4364CA62289DAF1600CBE229 /* Combine */,
 				4364CA59289D96DD00CBE229 /* SwiftUI */,
 			);
 			path = Helpers;
@@ -234,6 +223,11 @@
 			dependencies = (
 			);
 			name = DynamicFormTest;
+			packageProductDependencies = (
+				BBFF489E28A3F6620048183E /* CombineExt */,
+				BB11B90B28A3F73500CBE91D /* XCoordinator */,
+				BB11B90E28A3F74E00CBE91D /* SwiftUIX */,
+			);
 			productName = DynamicFormTest;
 			productReference = 437238E0289D7922000F0955 /* DynamicFormTest.app */;
 			productType = "com.apple.product-type.application";
@@ -262,6 +256,11 @@
 				Base,
 			);
 			mainGroup = 437238D7289D7922000F0955;
+			packageReferences = (
+				BBFF489D28A3F6620048183E /* XCRemoteSwiftPackageReference "CombineExt" */,
+				BB11B90A28A3F73500CBE91D /* XCRemoteSwiftPackageReference "XCoordinator" */,
+				BB11B90D28A3F74E00CBE91D /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+			);
 			productRefGroup = 437238E1289D7922000F0955 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -289,8 +288,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				436DC61028A2E8F0002D1435 /* DateFormCellView.swift in Sources */,
-				4364CA68289DB6C000CBE229 /* DemandBuffer.swift in Sources */,
-				4364CA6A289DB6CF00CBE229 /* Sink.swift in Sources */,
 				4364CA5B289D96EE00CBE229 /* PrimaryButtonStyle.swift in Sources */,
 				4364CA5F289D9C5900CBE229 /* SecondaryButtonStyle.swift in Sources */,
 				4364CA5D289D999E00CBE229 /* Color.swift in Sources */,
@@ -307,7 +304,6 @@
 				436DC60428A1A5D4002D1435 /* RadioFormCellView.swift in Sources */,
 				436DC60A28A2A35B002D1435 /* MultiTextFormCellView.swift in Sources */,
 				437238E6289D7922000F0955 /* SceneDelegate.swift in Sources */,
-				4364CA64289DAF2900CBE229 /* WithLatestFrom.swift in Sources */,
 				436DC60628A1A775002D1435 /* FloatingPlaceholderTextField.swift in Sources */,
 				4364CA58289D8AC900CBE229 /* DisputeFormViewModel.swift in Sources */,
 				4364CA66289DB0F600CBE229 /* FormElementViewModel.swift in Sources */,
@@ -522,6 +518,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BB11B90A28A3F73500CBE91D /* XCRemoteSwiftPackageReference "XCoordinator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/quickbirdstudios/XCoordinator.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		BB11B90D28A3F74E00CBE91D /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.2;
+			};
+		};
+		BBFF489D28A3F6620048183E /* XCRemoteSwiftPackageReference "CombineExt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineExt.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BB11B90B28A3F73500CBE91D /* XCoordinator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB11B90A28A3F73500CBE91D /* XCRemoteSwiftPackageReference "XCoordinator" */;
+			productName = XCoordinator;
+		};
+		BB11B90E28A3F74E00CBE91D /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB11B90D28A3F74E00CBE91D /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+		BBFF489E28A3F6620048183E /* CombineExt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBFF489D28A3F6620048183E /* XCRemoteSwiftPackageReference "CombineExt" */;
+			productName = CombineExt;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 437238D8289D7922000F0955 /* Project object */;
 }
