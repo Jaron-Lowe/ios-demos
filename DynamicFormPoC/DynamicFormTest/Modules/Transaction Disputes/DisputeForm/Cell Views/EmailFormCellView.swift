@@ -16,7 +16,7 @@ struct EmailFormCellView: View {
             }
         }
         .frame(maxWidth: .infinity)
-        .padding([.top, .leading, .bottom, .trailing], 30.0)
+        .padding(.all, 30.0)
         .background(Color.white)
     }
 }

@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 import CombineExt
+import XCoordinator
 
 class DisputeFormViewModel: ObservableObject {
     // MARK: Properties
@@ -9,10 +10,13 @@ class DisputeFormViewModel: ObservableObject {
     @Published private(set) var pathToNextEmptyElement: [String] = []
     @Published private(set) var isReviewDisputesButtonDisabled = false
     
+    private let router: WeakRouter<DisputesRoute>
+    private var cancellables = Set<AnyCancellable>()
     private let formStructure = CurrentValueSubject<Form, Never>(Form())
     
     // MARK: Init
-    init(disputeForm: DisputeForm) {
+    init(router: WeakRouter<DisputesRoute>, disputeForm: DisputeForm) {
+        self.router = router
         formStructure.send(disputeForm.formStructure)
     }
 }
@@ -20,6 +24,7 @@ class DisputeFormViewModel: ObservableObject {
 // MARK: - BindableViewModel
 extension DisputeFormViewModel: BindableViewModel {
     struct Inputs {
+        let viewDidLoads: AnyPublisher<Void, Never>
         let reviewDisputeButtonTaps: AnyPublisher<Void, Never>
         let cancelButtonTaps: AnyPublisher<Void, Never>
         let formValueChanges: AnyPublisher<FormElementValueChange, Never>
@@ -32,6 +37,8 @@ extension DisputeFormViewModel: BindableViewModel {
     }
     
     func bind(inputs: Inputs) {
+        setUpSubscriptions(inputs: inputs)
+        
         let formStructure = formStructure.eraseToAnyPublisher()
         let compositions = Compositions(
             formStructure: formStructure,
@@ -49,6 +56,15 @@ extension DisputeFormViewModel: BindableViewModel {
 
 // MARK: - Private Methods
 private extension DisputeFormViewModel {
+    // MARK: Subscriptions
+    func setUpSubscriptions(inputs: Inputs) {
+        inputs.viewDidLoads
+            .sink(receiveValue: { [weak self] _ in
+                self?.router.trigger(.tip)
+            })
+            .store(in: &cancellables)
+    }
+    
     // MARK: Compositions
     func formValues(inputs: Inputs) -> AnyPublisher<[String: FormElementValue], Never> {
         return inputs.formValueChanges

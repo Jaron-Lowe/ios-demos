@@ -4,8 +4,9 @@ import XCoordinator
 
 class DisputeSelectViewModel: ObservableObject {
     // MARK: Properties
-    let router: WeakRouter<DisputesRoute>
     @Published private(set) var disputeOptions: [DisputeForm] = DisputeForm.allCases
+    
+    private let router: WeakRouter<DisputesRoute>
     private var cancellables = Set<AnyCancellable>()
     
     // MARK: Init

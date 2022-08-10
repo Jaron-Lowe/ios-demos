@@ -33,6 +33,9 @@
 		437238F0289D7927000F0955 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 437238EE289D7927000F0955 /* LaunchScreen.storyboard */; };
 		43F45E8728A3F9A40045CD01 /* DisputesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F45E8628A3F9A40045CD01 /* DisputesCoordinator.swift */; };
 		43F45E8928A3FD240045CD01 /* PreviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F45E8828A3FD240045CD01 /* PreviewRouter.swift */; };
+		43F45E8D28A418850045CD01 /* DisputeTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F45E8C28A418850045CD01 /* DisputeTipView.swift */; };
+		43F45E9228A4254B0045CD01 /* CloseBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F45E9128A4254B0045CD01 /* CloseBar.swift */; };
+		43F45E9428A427B10045CD01 /* DisputeTipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F45E9328A427B10045CD01 /* DisputeTipViewModel.swift */; };
 		BB11B90C28A3F73500CBE91D /* XCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = BB11B90B28A3F73500CBE91D /* XCoordinator */; };
 		BB11B90F28A3F74E00CBE91D /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = BB11B90E28A3F74E00CBE91D /* SwiftUIX */; };
 		BBFF489F28A3F6620048183E /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = BBFF489E28A3F6620048183E /* CombineExt */; };
@@ -67,6 +70,9 @@
 		437238F1289D7927000F0955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43F45E8628A3F9A40045CD01 /* DisputesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisputesCoordinator.swift; sourceTree = "<group>"; };
 		43F45E8828A3FD240045CD01 /* PreviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewRouter.swift; sourceTree = "<group>"; };
+		43F45E8C28A418850045CD01 /* DisputeTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisputeTipView.swift; sourceTree = "<group>"; };
+		43F45E9128A4254B0045CD01 /* CloseBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseBar.swift; sourceTree = "<group>"; };
+		43F45E9328A427B10045CD01 /* DisputeTipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisputeTipViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +92,7 @@
 		4364CA59289D96DD00CBE229 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				4364CA5A289D96EE00CBE229 /* PrimaryButtonStyle.swift */,
-				4364CA5E289D9C5900CBE229 /* SecondaryButtonStyle.swift */,
-				4364CA5C289D999E00CBE229 /* Color.swift */,
-				436DC60528A1A775002D1435 /* FloatingPlaceholderTextField.swift */,
+				43F45E8E28A41ABE0045CD01 /* Components */,
 				43F45E8828A3FD240045CD01 /* PreviewRouter.swift */,
 			);
 			path = SwiftUI;
@@ -161,6 +164,8 @@
 				4364CA6B289EBCCE00CBE229 /* DisputeForm.swift */,
 				4364CA7128A15E4900CBE229 /* DisputeSelect */,
 				4364CA7028A15E3C00CBE229 /* DisputeForm */,
+				43F45E8A28A417CD0045CD01 /* DisputeTip */,
+				43F45E8B28A417D60045CD01 /* DisputeSuccess */,
 			);
 			path = "Transaction Disputes";
 			sourceTree = "<group>";
@@ -211,6 +216,34 @@
 				4364CA6F28A15DF800CBE229 /* Supporting Files */,
 			);
 			path = DynamicFormTest;
+			sourceTree = "<group>";
+		};
+		43F45E8A28A417CD0045CD01 /* DisputeTip */ = {
+			isa = PBXGroup;
+			children = (
+				43F45E8C28A418850045CD01 /* DisputeTipView.swift */,
+				43F45E9328A427B10045CD01 /* DisputeTipViewModel.swift */,
+			);
+			path = DisputeTip;
+			sourceTree = "<group>";
+		};
+		43F45E8B28A417D60045CD01 /* DisputeSuccess */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DisputeSuccess;
+			sourceTree = "<group>";
+		};
+		43F45E8E28A41ABE0045CD01 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4364CA5A289D96EE00CBE229 /* PrimaryButtonStyle.swift */,
+				4364CA5E289D9C5900CBE229 /* SecondaryButtonStyle.swift */,
+				4364CA5C289D999E00CBE229 /* Color.swift */,
+				436DC60528A1A775002D1435 /* FloatingPlaceholderTextField.swift */,
+				43F45E9128A4254B0045CD01 /* CloseBar.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +329,7 @@
 				436DC61028A2E8F0002D1435 /* DateFormCellView.swift in Sources */,
 				4364CA5B289D96EE00CBE229 /* PrimaryButtonStyle.swift in Sources */,
 				4364CA5F289D9C5900CBE229 /* SecondaryButtonStyle.swift in Sources */,
+				43F45E9428A427B10045CD01 /* DisputeTipViewModel.swift in Sources */,
 				4364CA5D289D999E00CBE229 /* Color.swift in Sources */,
 				4364CA7328A1600900CBE229 /* DisputeSelectViewModel.swift in Sources */,
 				4364CA6C289EBCCE00CBE229 /* DisputeForm.swift in Sources */,
@@ -305,11 +339,13 @@
 				436DC61228A2E94B002D1435 /* CurrencyFormCellView.swift in Sources */,
 				436DC60E28A2E880002D1435 /* AddressFormCellView.swift in Sources */,
 				436DC60C28A2DA3A002D1435 /* EmailFormCellView.swift in Sources */,
+				43F45E8D28A418850045CD01 /* DisputeTipView.swift in Sources */,
 				4364CA8028A1756700CBE229 /* CustomNavigationController.swift in Sources */,
 				4364CA61289DA36200CBE229 /* Form.swift in Sources */,
 				437238E4289D7922000F0955 /* AppDelegate.swift in Sources */,
 				436DC60428A1A5D4002D1435 /* RadioFormCellView.swift in Sources */,
 				436DC60A28A2A35B002D1435 /* MultiTextFormCellView.swift in Sources */,
+				43F45E9228A4254B0045CD01 /* CloseBar.swift in Sources */,
 				43F45E8928A3FD240045CD01 /* PreviewRouter.swift in Sources */,
 				437238E6289D7922000F0955 /* SceneDelegate.swift in Sources */,
 				436DC60628A1A775002D1435 /* FloatingPlaceholderTextField.swift in Sources */,

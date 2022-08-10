@@ -5,6 +5,7 @@ struct DisputeFormView: View {
     @ObservedObject private(set) var viewModel: DisputeFormViewModel
     
     // MARK: Inputs
+    private let viewDidLoads = PassthroughSubject<Void, Never>()
     private let reviewDisputeButtonTaps = PassthroughSubject<Void, Never>()
     private let cancelButtonTaps = PassthroughSubject<Void, Never>()
     private let formValueChanges = PassthroughSubject<FormElementValueChange, Never>()
@@ -13,10 +14,13 @@ struct DisputeFormView: View {
     init(viewModel: DisputeFormViewModel) {
         self.viewModel = viewModel
         viewModel.bind(inputs: DisputeFormViewModel.Inputs(
+            viewDidLoads: viewDidLoads.eraseToAnyPublisher(),
             reviewDisputeButtonTaps: reviewDisputeButtonTaps.eraseToAnyPublisher(),
             cancelButtonTaps: cancelButtonTaps.eraseToAnyPublisher(),
             formValueChanges: formValueChanges.eraseToAnyPublisher()
         ))
+        
+        viewDidLoads.send()
     }
     
     var body: some View {
@@ -94,6 +98,6 @@ struct CallForAssistanceView: View {
 
 struct DisputeFormView_Previews: PreviewProvider {
     static var previews: some View {
-        DisputeFormView(viewModel: DisputeFormViewModel(disputeForm: .returnOrCancellation))
+        DisputeFormView(viewModel: DisputeFormViewModel(router: PreviewRouter<DisputesRoute>().weakRouter, disputeForm: .returnOrCancellation))
     }
 }

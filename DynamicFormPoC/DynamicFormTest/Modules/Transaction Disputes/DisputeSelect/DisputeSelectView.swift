@@ -24,7 +24,7 @@ struct DisputeSelectView: View {
                 .font(.system(size: 16.0))
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity)
-                .padding([.top, .leading, .bottom, .trailing], 20.0)
+                .padding(.all, 20.0)
                 .lineLimit(1)
                 .minimumScaleFactor(0.7)
             Divider()
@@ -84,11 +84,10 @@ struct DisputeInfoView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .padding([.leading, .trailing], 8.0)
-            
+            .padding(.horizontal, 8.0)
         }
         .frame(maxWidth: .infinity)
-        .padding([.top, .leading, .bottom, .trailing], 30.0)
+        .padding(.all, 30.0)
         .background(Color.background)
     }
 }

@@ -6,6 +6,7 @@ enum DisputesRoute: Route {
     case select
     case form(DisputeForm)
     case tip
+    case tipDismiss
     case success
 }
 
@@ -13,6 +14,7 @@ final class DisputesCoordinator: NavigationCoordinator<DisputesRoute> {
     
     // MARK: NavigationCoordinator
     override func prepareTransition(for route: DisputesRoute) -> NavigationTransition {
+        rootViewController.modalPresentationStyle = .fullScreen
         switch route {
         case .select:
             return .set([makeDisputeSelectScreen()])
@@ -20,6 +22,8 @@ final class DisputesCoordinator: NavigationCoordinator<DisputesRoute> {
             return .push(makeDisputeFormScreen(disputeForm: disputeForm))
         case .tip:
             return .present(makeTipScreen())
+        case .tipDismiss:
+            return .dismiss()
         case .success:
             return .push(makeSuccessScreen())
         }
@@ -36,14 +40,17 @@ private extension DisputesCoordinator {
     }
     
     func makeDisputeFormScreen(disputeForm: DisputeForm) -> UIViewController {
-        let viewModel = DisputeFormViewModel(disputeForm: disputeForm)
+        let viewModel = DisputeFormViewModel(router: weakRouter, disputeForm: disputeForm)
         let controller = UIHostingController(rootView: DisputeFormView(viewModel: viewModel))
         controller.title = "Dispute"
         return controller
     }
     
     func makeTipScreen() -> UIViewController {
-        return UIViewController()
+        let viewModel = DisputeTipViewModel(router: weakRouter)
+        let controller = UIHostingController(rootView: DisputeTipView(viewModel: viewModel))
+        controller.title = ""
+        return controller
     }
     
     func makeSuccessScreen() -> UIViewController {

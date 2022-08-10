@@ -1,6 +1,7 @@
 import XCoordinator
 import UIKit
 
+/// Used as a dummy router for viewModels required in SwiftUI Preview Providers 
 final class PreviewRouter<RouteType: Route>: Router {
     var currentRoute: RouteType?
     var viewController: UIViewController!

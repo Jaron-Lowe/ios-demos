@@ -48,7 +48,7 @@ struct MultiTextFormCellView: View {
             .font(.system(size: 12.0))
         }
         .frame(maxWidth: .infinity)
-        .padding([.top, .leading, .bottom, .trailing], 30.0)
+        .padding(.all, 30.0)
         .background(Color.white)
         
     }
