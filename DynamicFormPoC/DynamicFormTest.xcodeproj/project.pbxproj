@@ -31,6 +31,8 @@
 		437238E6289D7922000F0955 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437238E5289D7922000F0955 /* SceneDelegate.swift */; };
 		437238ED289D7927000F0955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 437238EC289D7927000F0955 /* Assets.xcassets */; };
 		437238F0289D7927000F0955 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 437238EE289D7927000F0955 /* LaunchScreen.storyboard */; };
+		43F45E8728A3F9A40045CD01 /* DisputesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F45E8628A3F9A40045CD01 /* DisputesCoordinator.swift */; };
+		43F45E8928A3FD240045CD01 /* PreviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F45E8828A3FD240045CD01 /* PreviewRouter.swift */; };
 		BB11B90C28A3F73500CBE91D /* XCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = BB11B90B28A3F73500CBE91D /* XCoordinator */; };
 		BB11B90F28A3F74E00CBE91D /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = BB11B90E28A3F74E00CBE91D /* SwiftUIX */; };
 		BBFF489F28A3F6620048183E /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = BBFF489E28A3F6620048183E /* CombineExt */; };
@@ -63,6 +65,8 @@
 		437238EC289D7927000F0955 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		437238EF289D7927000F0955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		437238F1289D7927000F0955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43F45E8628A3F9A40045CD01 /* DisputesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisputesCoordinator.swift; sourceTree = "<group>"; };
+		43F45E8828A3FD240045CD01 /* PreviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,16 +90,17 @@
 				4364CA5E289D9C5900CBE229 /* SecondaryButtonStyle.swift */,
 				4364CA5C289D999E00CBE229 /* Color.swift */,
 				436DC60528A1A775002D1435 /* FloatingPlaceholderTextField.swift */,
+				43F45E8828A3FD240045CD01 /* PreviewRouter.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
 		};
-		4364CA6D28A15DD500CBE229 /* Screens */ = {
+		4364CA6D28A15DD500CBE229 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				4364CA7B28A1674D00CBE229 /* Transaction Disputes */,
 			);
-			path = Screens;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		4364CA6E28A15DF000CBE229 /* Helpers */ = {
@@ -151,6 +156,7 @@
 		4364CA7B28A1674D00CBE229 /* Transaction Disputes */ = {
 			isa = PBXGroup;
 			children = (
+				43F45E8628A3F9A40045CD01 /* DisputesCoordinator.swift */,
 				4364CA60289DA36200CBE229 /* Form.swift */,
 				4364CA6B289EBCCE00CBE229 /* DisputeForm.swift */,
 				4364CA7128A15E4900CBE229 /* DisputeSelect */,
@@ -201,7 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				4364CA6E28A15DF000CBE229 /* Helpers */,
-				4364CA6D28A15DD500CBE229 /* Screens */,
+				4364CA6D28A15DD500CBE229 /* Modules */,
 				4364CA6F28A15DF800CBE229 /* Supporting Files */,
 			);
 			path = DynamicFormTest;
@@ -293,6 +299,7 @@
 				4364CA5D289D999E00CBE229 /* Color.swift in Sources */,
 				4364CA7328A1600900CBE229 /* DisputeSelectViewModel.swift in Sources */,
 				4364CA6C289EBCCE00CBE229 /* DisputeForm.swift in Sources */,
+				43F45E8728A3F9A40045CD01 /* DisputesCoordinator.swift in Sources */,
 				4364CA7728A1602D00CBE229 /* DisputeSelectView.swift in Sources */,
 				4364CA56289D7CEA00CBE229 /* DisputeFormView.swift in Sources */,
 				436DC61228A2E94B002D1435 /* CurrencyFormCellView.swift in Sources */,
@@ -303,6 +310,7 @@
 				437238E4289D7922000F0955 /* AppDelegate.swift in Sources */,
 				436DC60428A1A5D4002D1435 /* RadioFormCellView.swift in Sources */,
 				436DC60A28A2A35B002D1435 /* MultiTextFormCellView.swift in Sources */,
+				43F45E8928A3FD240045CD01 /* PreviewRouter.swift in Sources */,
 				437238E6289D7922000F0955 /* SceneDelegate.swift in Sources */,
 				436DC60628A1A775002D1435 /* FloatingPlaceholderTextField.swift in Sources */,
 				4364CA58289D8AC900CBE229 /* DisputeFormViewModel.swift in Sources */,
@@ -524,8 +532,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/quickbirdstudios/XCoordinator.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
 			};
 		};
 		BB11B90D28A3F74E00CBE91D /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {

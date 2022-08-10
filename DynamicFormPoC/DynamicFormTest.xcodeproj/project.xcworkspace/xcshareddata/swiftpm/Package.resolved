@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/quickbirdstudios/XCoordinator.git",
       "state" : {
-        "branch" : "master",
-        "revision" : "eb6edf701434c3a9d7460009298cf35575b96ed5"
+        "revision" : "eb6edf701434c3a9d7460009298cf35575b96ed5",
+        "version" : "2.2.0"
       }
     }
   ],

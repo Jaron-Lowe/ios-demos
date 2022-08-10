@@ -1,5 +1,6 @@
 import SwiftUI
 import Combine
+import XCoordinator
 
 struct DisputeSelectView: View {
     @ObservedObject private(set) var viewModel: DisputeSelectViewModel
@@ -94,6 +95,8 @@ struct DisputeInfoView: View {
 
 struct DisputeSelectView_Previews: PreviewProvider {
     static var previews: some View {
-        DisputeSelectView(viewModel: DisputeSelectViewModel())
+        DisputeSelectView(
+            viewModel: DisputeSelectViewModel(router: PreviewRouter<DisputesRoute>().weakRouter)
+        )
     }
 }

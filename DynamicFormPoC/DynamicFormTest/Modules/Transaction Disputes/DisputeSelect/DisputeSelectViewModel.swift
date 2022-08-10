@@ -1,12 +1,17 @@
 import Foundation
 import Combine
+import XCoordinator
 
 class DisputeSelectViewModel: ObservableObject {
     // MARK: Properties
+    let router: WeakRouter<DisputesRoute>
     @Published private(set) var disputeOptions: [DisputeForm] = DisputeForm.allCases
-    
     private var cancellables = Set<AnyCancellable>()
+    
     // MARK: Init
+    init(router: WeakRouter<DisputesRoute>) {
+        self.router = router
+    }
 }
 
 extension DisputeSelectViewModel: BindableViewModel {
@@ -24,8 +29,8 @@ private extension DisputeSelectViewModel {
     func setUpSubscriptions(inputs: Inputs) {
         inputs.disputeOptionTaps
             .print("--- disputeOptionTaps")
-            .sink { option in
-                SceneDelegate.proccedToDisputeForm(disputeForm: option)
+            .sink { [weak self] option in
+                self?.router.trigger(.form(option))
             }
             .store(in: &cancellables)
     }
