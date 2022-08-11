@@ -2,12 +2,13 @@ import Foundation
 import Combine
 import CombineExt
 import XCoordinator
+import SwiftUIX
 
 class DisputeFormViewModel: ObservableObject {
     // MARK: Properties
     @Published private(set) var shouldShowConfirmCancelAlert = false
     @Published private(set) var formElements: [FormElementViewModel] = []
-    @Published private(set) var pathToNextEmptyElement: [String] = []
+    @Published private(set) var nextInvalidElement: String = ""
     @Published private(set) var isReviewDisputesButtonDisabled = false
     
     private let router: WeakRouter<DisputesRoute>
@@ -25,6 +26,7 @@ class DisputeFormViewModel: ObservableObject {
 extension DisputeFormViewModel: BindableViewModel {
     struct Inputs {
         let viewDidLoads: AnyPublisher<Void, Never>
+        let isKeyboardShown: AnyPublisher<Bool, Never>
         let reviewDisputeButtonTaps: AnyPublisher<Void, Never>
         let cancelButtonTaps: AnyPublisher<Void, Never>
         let formValueChanges: AnyPublisher<FormElementValueChange, Never>
@@ -49,8 +51,8 @@ extension DisputeFormViewModel: BindableViewModel {
         shouldShowConfirmCancelAlert(inputs: inputs, compositions: compositions).assign(to: &$shouldShowConfirmCancelAlert)
         let formElements = formElements(compositions: compositions)
         formElements.assign(to: &$formElements)
-        pathToNextEmptyElement(formElements: formElements).assign(to: &$pathToNextEmptyElement)
-        isReviewDisputesButtonDisabled(formElements: formElements).assign(to: &$isReviewDisputesButtonDisabled)
+        nextInvalidElement(formElements: formElements).assign(to: &$nextInvalidElement)
+        isReviewDisputesButtonDisabled(inputs: inputs, formElements: formElements).assign(to: &$isReviewDisputesButtonDisabled)
     }
 }
 
@@ -121,26 +123,22 @@ private extension DisputeFormViewModel {
             .eraseToAnyPublisher()
     }
     
-    func pathToNextEmptyElement(formElements: AnyPublisher<[FormElementViewModel], Never>) -> AnyPublisher<[String], Never> {
+    func nextInvalidElement(formElements: AnyPublisher<[FormElementViewModel], Never>) -> AnyPublisher<String, Never> {
         return formElements
             .compactMap { formElements in
-                guard let nextItem = formElements.first(where: { $0.value == nil }) else { return nil }
-                var path: [String] = []
-                for element in formElements {
-                    path.append(element.element.key)
-                    if (element.element.key == nextItem.element.key) { break }
-                }
-                return path
+                guard let nextItem = formElements.first(where: { $0.value?.isValid == false || $0.value == nil }) else { return "bottom" }
+                return nextItem.element.key
             }
-            .print("--- pathToNextEmptyElement")
+            .delay(for: .milliseconds(100), scheduler: RunLoop.main)
+            .print("--- nextInvalidElement")
             .receive(on: DispatchQueue.main)
             .share()
             .eraseToAnyPublisher()
     }
     
-    func isReviewDisputesButtonDisabled(formElements: AnyPublisher<[FormElementViewModel], Never>) -> AnyPublisher<Bool, Never> {
-        return formElements
-            .map { !($0.lastRequiredElementHasValue && $0.hasAllRequiredValues) }
+    func isReviewDisputesButtonDisabled(inputs: Inputs, formElements: AnyPublisher<[FormElementViewModel], Never>) -> AnyPublisher<Bool, Never> {
+        return Publishers.CombineLatest(formElements, inputs.isKeyboardShown)
+            .map { !($0.lastRequiredElementHasValue && $0.hasAllRequiredValues) || $1 }
             .print("--- isReviewDisputesButtonDisabled")
             .receive(on: DispatchQueue.main)
             .share()

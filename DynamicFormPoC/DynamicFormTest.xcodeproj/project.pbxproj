@@ -37,6 +37,8 @@
 		43F45E9228A4254B0045CD01 /* CloseBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F45E9128A4254B0045CD01 /* CloseBar.swift */; };
 		43F45E9428A427B10045CD01 /* DisputeTipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F45E9328A427B10045CD01 /* DisputeTipViewModel.swift */; };
 		43F45E9628A44BAB0045CD01 /* TextFieldErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F45E9528A44BAB0045CD01 /* TextFieldErrorView.swift */; };
+		43F45E9828A451B30045CD01 /* DatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F45E9728A451B30045CD01 /* DatePickerTextField.swift */; };
+		43F45E9A28A573BA0045CD01 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F45E9928A573BA0045CD01 /* Date+.swift */; };
 		BB11B90C28A3F73500CBE91D /* XCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = BB11B90B28A3F73500CBE91D /* XCoordinator */; };
 		BB11B90F28A3F74E00CBE91D /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = BB11B90E28A3F74E00CBE91D /* SwiftUIX */; };
 		BBFF489F28A3F6620048183E /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = BBFF489E28A3F6620048183E /* CombineExt */; };
@@ -75,6 +77,8 @@
 		43F45E9128A4254B0045CD01 /* CloseBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseBar.swift; sourceTree = "<group>"; };
 		43F45E9328A427B10045CD01 /* DisputeTipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisputeTipViewModel.swift; sourceTree = "<group>"; };
 		43F45E9528A44BAB0045CD01 /* TextFieldErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldErrorView.swift; sourceTree = "<group>"; };
+		43F45E9728A451B30045CD01 /* DatePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTextField.swift; sourceTree = "<group>"; };
+		43F45E9928A573BA0045CD01 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 		4364CA6E28A15DF000CBE229 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				43F45E9B28A5B44E0045CD01 /* Extensions */,
 				4364CA7E28A1755D00CBE229 /* UIKit */,
 				4364CA7828A1623600CBE229 /* MVVM+C */,
 				4364CA59289D96DD00CBE229 /* SwiftUI */,
@@ -243,10 +248,19 @@
 				4364CA5E289D9C5900CBE229 /* SecondaryButtonStyle.swift */,
 				4364CA5C289D999E00CBE229 /* Color.swift */,
 				436DC60528A1A775002D1435 /* FloatingPlaceholderTextField.swift */,
+				43F45E9728A451B30045CD01 /* DatePickerTextField.swift */,
 				43F45E9128A4254B0045CD01 /* CloseBar.swift */,
 				43F45E9528A44BAB0045CD01 /* TextFieldErrorView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		43F45E9B28A5B44E0045CD01 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				43F45E9928A573BA0045CD01 /* Date+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +346,7 @@
 				436DC61028A2E8F0002D1435 /* DateFormCellView.swift in Sources */,
 				4364CA5B289D96EE00CBE229 /* PrimaryButtonStyle.swift in Sources */,
 				4364CA5F289D9C5900CBE229 /* SecondaryButtonStyle.swift in Sources */,
+				43F45E9A28A573BA0045CD01 /* Date+.swift in Sources */,
 				43F45E9428A427B10045CD01 /* DisputeTipViewModel.swift in Sources */,
 				4364CA5D289D999E00CBE229 /* Color.swift in Sources */,
 				4364CA7328A1600900CBE229 /* DisputeSelectViewModel.swift in Sources */,
@@ -353,6 +368,7 @@
 				43F45E9628A44BAB0045CD01 /* TextFieldErrorView.swift in Sources */,
 				437238E6289D7922000F0955 /* SceneDelegate.swift in Sources */,
 				436DC60628A1A775002D1435 /* FloatingPlaceholderTextField.swift in Sources */,
+				43F45E9828A451B30045CD01 /* DatePickerTextField.swift in Sources */,
 				4364CA58289D8AC900CBE229 /* DisputeFormViewModel.swift in Sources */,
 				4364CA66289DB0F600CBE229 /* FormElementViewModel.swift in Sources */,
 				4364CA7A28A1624800CBE229 /* BindableViewModel.swift in Sources */,

@@ -6,9 +6,9 @@ struct MultiTextFormCellView: View {
     private let formValueChanges: PassthroughSubject<FormElementValueChange, Never>
     
     @State private(set) var values: [String]
-    var placeholder = "Value..."
-    var addButtonTitle = "+ Add value"
-    var keyboardType = UIKeyboardType.default
+    private var placeholder = "Value..."
+    private var addButtonTitle = "+ Add value"
+    private var keyboardType = UIKeyboardType.default
     
     init(viewModel: FormElementViewModel, formValueChanges: PassthroughSubject<FormElementValueChange, Never>) {
         self.viewModel = viewModel
@@ -69,5 +69,6 @@ struct MultiTextFormCellView_Previews: PreviewProvider {
             ),
             formValueChanges: PassthroughSubject()
         )
+        .previewLayout(.sizeThatFits)
     }
 }

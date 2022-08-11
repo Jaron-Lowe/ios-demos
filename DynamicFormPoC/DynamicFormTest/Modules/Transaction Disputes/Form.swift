@@ -31,7 +31,7 @@ struct Form {
         case email
         case multiText(placeholder: String, addFieldTitle: String, keyboardType: UIKeyboardType)
         case address
-        case date(min: Date, max: Date)
+        case date(range: ClosedRange<Date>)
         case currency(placeholder: String)
     }
     

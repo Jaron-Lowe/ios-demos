@@ -61,5 +61,6 @@ struct RadioFormCellView_Previews: PreviewProvider {
             ),
             formValueChanges: PassthroughSubject()
         )
+        .previewLayout(.sizeThatFits)
     }
 }

@@ -29,7 +29,7 @@ struct EmailFormCellView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             VStack(spacing: 0) {
-                Text("Aditional Email (optional)")
+                Text("Additional Email (optional)")
                     .fontWeight(.semibold)
                     .font(.system(size: 21.0))
                     .frame(maxWidth: .infinity, alignment: .leading)

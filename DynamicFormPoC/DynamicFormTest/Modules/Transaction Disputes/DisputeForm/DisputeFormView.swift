@@ -1,5 +1,6 @@
 import SwiftUI
 import Combine
+import SwiftUIX
 
 struct DisputeFormView: View {
     @ObservedObject private(set) var viewModel: DisputeFormViewModel
@@ -15,6 +16,7 @@ struct DisputeFormView: View {
         self.viewModel = viewModel
         viewModel.bind(inputs: DisputeFormViewModel.Inputs(
             viewDidLoads: viewDidLoads.eraseToAnyPublisher(),
+            isKeyboardShown: Keyboard.main.$isShown.eraseToAnyPublisher(),
             reviewDisputeButtonTaps: reviewDisputeButtonTaps.eraseToAnyPublisher(),
             cancelButtonTaps: cancelButtonTaps.eraseToAnyPublisher(),
             formValueChanges: formValueChanges.eraseToAnyPublisher()
@@ -36,25 +38,24 @@ struct DisputeFormView: View {
                             ForEach(viewModel.formElements) { elementViewModel in
                                 cell(for: elementViewModel)
                             }
+                            VStack {
+                                Button("Review Dispute") {
+                                    reviewDisputeButtonTaps.send()
+                                }
+                                .disabled(viewModel.isReviewDisputesButtonDisabled)
+                                .buttonStyle(PrimaryButtonStyle())
+                                .id("bottom")
+                            }
+                            .padding(EdgeInsets(top: 15.0, leading: 30.0, bottom: 15.0, trailing: 30.0))
                         }
                     }
                     .frame(maxHeight: .infinity)
-                    .onChange(of: viewModel.pathToNextEmptyElement) { keysPath in
-                        guard let nextKey = keysPath.last else { return }
-                        withAnimation() {
+                    .onReceive(viewModel.$nextInvalidElement, perform: { nextKey in
+                        withAnimation {
                             reader.scrollTo(nextKey, anchor: .bottom)
                         }
-                    }
+                    })
                 }
-                VStack(spacing: 10.0) {
-                    Button("Review Dispute") {
-                        reviewDisputeButtonTaps.send()
-                    }
-                    .buttonStyle(PrimaryButtonStyle())
-                    .disabled(viewModel.isReviewDisputesButtonDisabled)
-                }
-                .frame(maxWidth: .infinity, alignment: .top)
-                .padding(EdgeInsets(top: 15.0, leading: 30.0, bottom: 15.0, trailing: 30.0))
             }
             .frame(maxWidth: .infinity)
         }

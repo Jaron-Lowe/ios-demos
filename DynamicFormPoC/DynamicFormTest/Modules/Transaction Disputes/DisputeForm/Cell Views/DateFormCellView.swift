@@ -2,8 +2,20 @@ import SwiftUI
 import Combine
 
 struct DateFormCellView: View {
-    let viewModel: FormElementViewModel
-    let formValueChanges: PassthroughSubject<FormElementValueChange, Never>
+    private let viewModel: FormElementViewModel
+    private let formValueChanges: PassthroughSubject<FormElementValueChange, Never>
+    
+    @State private(set) var dateValue: Date? = nil
+    private var dateRange: ClosedRange<Date> = Date.distantRange
+    
+    init(viewModel: FormElementViewModel, formValueChanges: PassthroughSubject<FormElementValueChange, Never>) {
+        self.viewModel = viewModel
+        self.formValueChanges = formValueChanges
+        
+        if case .date(let dateRange) = viewModel.element.type {
+            self.dateRange = dateRange
+        }
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10.0) {
@@ -11,13 +23,20 @@ struct DateFormCellView: View {
                 .fontWeight(.semibold)
                 .font(.system(size: 21.0))
                 .frame(maxWidth: .infinity, alignment: .leading)
-            Button("Simulate Value") {
-                formValueChanges.send(FormElementValueChange(key: viewModel.element.key, value: .date(Date())))
-            }
+            DatePickerTextField(placeholder: "Select date", date: $dateValue, dateRange: dateRange)
+                .onChange(of: dateValue) { newValue in
+                    guard let newDate = newValue else { return }
+                    formValueChanges.send(FormElementValueChange(key: viewModel.element.key, value: .date(newDate)))
+                }
         }
         .frame(maxWidth: .infinity)
         .padding(.all, 30.0)
         .background(Color.white)
+        .onAppear {
+            if case .date(let date) = viewModel.value {
+                dateValue = date
+            }
+        }
     }
 }
 
@@ -25,10 +44,11 @@ struct DateFormCellView_Previews: PreviewProvider {
     static var previews: some View {
         DateFormCellView(
             viewModel: FormElementViewModel(
-                element: Form.Element(key: "A", type: .date(min: Date(), max: Date()), title: "What date answers this question?"),
+                element: Form.Element(key: "A", type: .date(range: Date.distantPast...Date.distantFuture), title: "What date answers this question?"),
                 value: nil
             ),
             formValueChanges: PassthroughSubject()
         )
+        .previewLayout(.sizeThatFits)
     }
 }

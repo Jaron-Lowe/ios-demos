@@ -52,16 +52,16 @@ enum DisputeForm: CaseIterable {
                 Form.Element(key: "provided_address", type: .address, title: "What address did you provide for delivery of the good(s) or service(s)?"),
                 Form.Element(key: "tried_contact", type: .radio(options: ["Yes", "No"]), title: "Have you tried to contact the merchant?"),
                 // YES - tried_contact
-                Form.Element(key: "last_contact", type: .date(min: Date(), max: Date()), title: "When did you last try to contact the merchant?", parents: [.init(key: "tried_contact", index: 0)]),
+                Form.Element(key: "last_contact", type: .date(range: Date.distantRange), title: "When did you last try to contact the merchant?", parents: [.init(key: "tried_contact", index: 0)]),
                 Form.Element(key: "how_contact", type: .radio(options: ["Phone", "Email", "In Person", "Letter", "Live Chat", "Fax", "Text", "Other"]), title: "How did you try to contact the merchant?", parents: [.init(key: "tried_contact", index: 0)]),
                 Form.Element(key: "what_contact", type: .text(placeholder: "Enter text here...", keyboardType: .default), title: "Tell us what happened when you tried to contact the merchant.", parents: [.init(key: "tried_contact", index: 0)]),
                 Form.Element(key: "prove_contact", type: .radio(options: ["Yes", "No"]), title: "Are you able to show us that you contacted the merchant?", parents: [.init(key: "tried_contact", index: 0)]),
-                Form.Element(key: "canceled_when", type: .date(min: Date(), max: Date()), title: "When did you cancel this transaction?", parents: [.init(key: "tried_contact", index: 0)]),
+                Form.Element(key: "canceled_when", type: .date(range: Date.distantRange), title: "When did you cancel this transaction?", parents: [.init(key: "tried_contact", index: 0)]),
                 Form.Element(key: "confirmation_numbers", type: .multiText(placeholder: "Enter confirmation number", addFieldTitle: "+ Add another number", keyboardType: .numberPad), title: "Please provide any cancellation confirmation numbers from the merchant (if available).", isRequired: false, parents: [.init(key: "tried_contact", index: 0)]),
                 Form.Element(key: "initial_authorization", type: .radio(options: ["Yes", "No"]), title: "Do you have a copy of your initial authorization for the charge?", parents: [.init(key: "tried_contact", index: 0)]),
                 Form.Element(key: "return_after_cancel", type: .radio(options: ["Yes", "No"]), title: "Did you return anything to the merchant after cancelling this transaction?", parents: [.init(key: "tried_contact", index: 0)]),
                 // YES - return_after_cancel
-                Form.Element(key: "date_of_return", type: .date(min: Date(), max: Date()), title: "Enter the date that you made the return.", parents: [.init(key: "return_after_cancel", index: 0)]),
+                Form.Element(key: "date_of_return", type: .date(range: Date.distantRange), title: "Enter the date that you made the return.", parents: [.init(key: "return_after_cancel", index: 0)]),
                 Form.Element(key: "prove_return", type: .radio(options: ["Yes", "No"]), title: "Are you able to show us proof of this return?", parents: [.init(key: "return_after_cancel", index: 0)]),
                 // NO Funnel - tried_contact, return_after_cancel, prove_return
                 Form.Element(key: "did_you_know", type: .radio(options: ["Yes", "No"]), title: "Did you know this would be a recurring charge?", parents: [.init(key: "tried_contact", index: 1), .init(key: "return_after_cancel", index: 1), .init(key: "prove_return", index: nil)]),
@@ -73,7 +73,7 @@ enum DisputeForm: CaseIterable {
                 Form.Element(key: "received", type: .radio(options: ["Yes", "No"]), title: "Did you receive the good(s) or service(s)?"),
                 Form.Element(key: "provided_address", type: .address, title: "What address did you provide for delivery of the good(s) or service(s)?"),
                 Form.Element(key: "tried_contact", type: .radio(options: ["Yes", "No"]), title: "Have you tried to contact the merchant?"),
-                Form.Element(key: "last_contact", type: .date(min: Date(), max: Date()), title: "When did you last try to contact the merchant?", parents: [.init(key: "tried_contact", index: 0)]),
+                Form.Element(key: "last_contact", type: .date(range: Date.distantRange), title: "When did you last try to contact the merchant?", parents: [.init(key: "tried_contact", index: 0)]),
                 Form.Element(key: "how_contact", type: .radio(options: ["Phone", "Email", "In Person", "Letter", "Live Chat", "Fax", "Text", "Other"]), title: "How did you try to contact the merchant?", parents: [.init(key: "tried_contact", index: 0)]),
                 Form.Element(key: "what contact", type: .text(placeholder: "Enter text here...", keyboardType: .default), title: "Tell us what happened when you tried to contact the merchant.", parents: [.init(key: "tried_contact", index: 0)]),
                 Form.Element(key: "prove_contact", type: .radio(options: ["Yes", "No"]), title: "Are you able to show us that you contacted the merchant?", parents: [.init(key: "tried_contact", index: 0)]),
@@ -86,7 +86,7 @@ enum DisputeForm: CaseIterable {
                 Form.Element(key: "prove_return", type: .radio(options: ["Yes", "No"]), title: "Are you able to show us that you made any returns or cancelled any services?", parents: [.init(key: "receipt_received", index: 1), .init(key: "show_us_receipt", index: nil)]),
                 Form.Element(key: "have_tracking_numbers", type: .radio(options: ["Yes", "No"]), title: "Do you have any tracking numbers for your returns?", parents: [.init(key: "receipt_received", index: 1), .init(key: "show_us_receipt", index: nil)]),
                 Form.Element(key: "tracking_numbers", type: .multiText(placeholder: "Enter tracking number", addFieldTitle: "+ Add another number", keyboardType: .numberPad), title: "Tracking number(s):", parents: [.init(key: "have_tracking_numbers", index: 0)]),
-                Form.Element(key: "date_returned", type: .date(min: Date(), max: Date()), title: "Enter the date that you returned the good(s) or cancelled the service(s).", parents: [.init(key: "have_tracking_numbers", index: nil)]),
+                Form.Element(key: "date_returned", type: .date(range: Date.distantRange), title: "Enter the date that you returned the good(s) or cancelled the service(s).", parents: [.init(key: "have_tracking_numbers", index: nil)]),
                 Form.Element(key: "amount_charged", type: .currency(placeholder: "Amount charged"), title: "How much were you charged for this transaction?", parents: [.init(key: "have_tracking_numbers", index: nil)]),
             ])
         case .damaged:
@@ -97,15 +97,15 @@ enum DisputeForm: CaseIterable {
                 Form.Element(key: "provided_address", type: .address, title: "What address did you provide for delivery of the good(s) or service(s)?"),
                 Form.Element(key: "tried_contact", type: .radio(options: ["Yes", "No"]), title: "Have you tried to contact the merchant to cancel this recurring transaction?"),
                 // YES - tried_contact
-                Form.Element(key: "last_contact", type: .date(min: Date(), max: Date()), title: "When did you last try to contact the merchant?", parents: [.init(key: "tried_contact", index: 0)]),
+                Form.Element(key: "last_contact", type: .date(range: Date.distantRange), title: "When did you last try to contact the merchant?", parents: [.init(key: "tried_contact", index: 0)]),
                 Form.Element(key: "how_contact", type: .radio(options: ["Phone", "Email", "In Person", "Letter", "Live Chat", "Fax", "Text", "Other"]), title: "How did you try to contact the merchant?", parents: [.init(key: "tried_contact", index: 0)]),
                 Form.Element(key: "what_contact", type: .text(placeholder: "Enter text here...", keyboardType: .default), title: "Tell us what happened when you tried to contact the merchant.", parents: [.init(key: "tried_contact", index: 0)]),
                 // NO - tried_contact
-                Form.Element(key: "best_explains", type: .radio(options: ["Shipping Damage", "Didn't receive good(s) or service(s)", "Defects (not from shipping)"]), title: "Tell us which choice below best explains your dispute:", parents: [.init(key: "tried_contact", index: 1), .init(key: "what_contact", index: nil)]),
+                Form.Element(key: "best_explains", type: .radio(options: ["Shipping Damage", "Didn't receive good(s) or service(s)", "Defects (not from shipping)"]), title: "Tell us which choice below best explains your dispute:", parents: [.init(key: "tried_contact", index: nil)]),
                 // OPTION 2 - best_explains
                 Form.Element(key: "receive_any", type: .radio(options: ["Yes", "No"]), title: "Did you receive any part of the good(s) or service(s) you were charged for?", parents: [.init(key: "best_explains", index: 1)]),
                 Form.Element(key: "describe_expectations", type: .text(placeholder: "Enter text here...", keyboardType: .default), title: "Please describe the good(s) or service(s) you expected to receive.", parents: [.init(key: "best_explains", index: 1)]),
-                Form.Element(key: "when_expectations", type: .date(min: Date(), max: Date()), title: "When did you expect to receive the good(s) or service(s)?", parents: [.init(key: "best_explains", index: 1)]),
+                Form.Element(key: "when_expectations", type: .date(range: Date.distantRange), title: "When did you expect to receive the good(s) or service(s)?", parents: [.init(key: "best_explains", index: 1)]),
                 Form.Element(key: "price_paid", type: .currency(placeholder: "Enter amount (USD)"), title: "What was the price paid for the good(s) or service(s)?", parents: [.init(key: "best_explains", index: 1)]),
                 // OPTION 1 OR 3 - best_explains
                 Form.Element(key: "describe_damage", type: .text(placeholder: "Enter text here...", keyboardType: .default), title: "Describe the damage or defects.", parents: [.init(key: "best_explains", index: 0), .init(key: "best_explains", index: 2)]),
@@ -131,7 +131,7 @@ enum DisputeForm: CaseIterable {
                 // Funnel - was_wrong_amount, alternate_payment_form
                 Form.Element(key: "tried_contact", type: .radio(options: ["Yes", "No"]), title: "Have you tried to contact the merchant?", parents: [.init(key: "was_wrong_amount", index: 0), .init(key: "alternate_payment_form", index: 1), .init(key: "alternate_payment_form", index: 1)]),
                 // YES - tried_contact
-                Form.Element(key: "last_contact", type: .date(min: Date(), max: Date()), title: "When did you last try to contact the merchant to resolve this dispute?", parents: [.init(key: "tried_contact", index: 0)]),
+                Form.Element(key: "last_contact", type: .date(range: Date.distantRange), title: "When did you last try to contact the merchant to resolve this dispute?", parents: [.init(key: "tried_contact", index: 0)]),
                 Form.Element(key: "how_contact", type: .radio(options: ["Phone", "Email", "In Person", "Letter", "Live Chat", "Fax", "Text", "Other"]), title: "How did you try to contact the merchant?", parents: [.init(key: "tried_contact", index: 0)]),
                 Form.Element(key: "what_contact", type: .text(placeholder: "Enter text here...", keyboardType: .default), title: "Tell us what happened when you tried to contact the merchant.", parents: [.init(key: "tried_contact", index: 0)]),
             ])

@@ -49,5 +49,6 @@ struct TextFormCellView_Previews: PreviewProvider {
             ),
             formValueChanges: PassthroughSubject()
         )
+        .previewLayout(.sizeThatFits)
     }
 }
