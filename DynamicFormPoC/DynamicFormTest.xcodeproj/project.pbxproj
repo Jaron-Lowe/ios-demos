@@ -31,6 +31,7 @@
 		437238E6289D7922000F0955 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437238E5289D7922000F0955 /* SceneDelegate.swift */; };
 		437238ED289D7927000F0955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 437238EC289D7927000F0955 /* Assets.xcassets */; };
 		437238F0289D7927000F0955 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 437238EE289D7927000F0955 /* LaunchScreen.storyboard */; };
+		43BA238C28AE9DA2003EBE53 /* CocoaTextField+Focused.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BA238B28AE9DA2003EBE53 /* CocoaTextField+Focused.swift */; };
 		43F45E8728A3F9A40045CD01 /* DisputesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F45E8628A3F9A40045CD01 /* DisputesCoordinator.swift */; };
 		43F45E8928A3FD240045CD01 /* PreviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F45E8828A3FD240045CD01 /* PreviewRouter.swift */; };
 		43F45E8D28A418850045CD01 /* DisputeTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F45E8C28A418850045CD01 /* DisputeTipView.swift */; };
@@ -71,6 +72,7 @@
 		437238EC289D7927000F0955 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		437238EF289D7927000F0955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		437238F1289D7927000F0955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43BA238B28AE9DA2003EBE53 /* CocoaTextField+Focused.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CocoaTextField+Focused.swift"; sourceTree = "<group>"; };
 		43F45E8628A3F9A40045CD01 /* DisputesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisputesCoordinator.swift; sourceTree = "<group>"; };
 		43F45E8828A3FD240045CD01 /* PreviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewRouter.swift; sourceTree = "<group>"; };
 		43F45E8C28A418850045CD01 /* DisputeTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisputeTipView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		4364CA59289D96DD00CBE229 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				43BA238A28AE9D8E003EBE53 /* Extensions */,
 				43F45E8E28A41ABE0045CD01 /* Components */,
 				43F45E8828A3FD240045CD01 /* PreviewRouter.swift */,
 			);
@@ -223,6 +226,14 @@
 				4364CA6F28A15DF800CBE229 /* Supporting Files */,
 			);
 			path = DynamicFormTest;
+			sourceTree = "<group>";
+		};
+		43BA238A28AE9D8E003EBE53 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				43BA238B28AE9DA2003EBE53 /* CocoaTextField+Focused.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		43F45E8A28A417CD0045CD01 /* DisputeTip */ = {
@@ -367,6 +378,7 @@
 				43F45E8928A3FD240045CD01 /* PreviewRouter.swift in Sources */,
 				43F45E9628A44BAB0045CD01 /* TextFieldErrorView.swift in Sources */,
 				437238E6289D7922000F0955 /* SceneDelegate.swift in Sources */,
+				43BA238C28AE9DA2003EBE53 /* CocoaTextField+Focused.swift in Sources */,
 				436DC60628A1A775002D1435 /* FloatingPlaceholderTextField.swift in Sources */,
 				43F45E9828A451B30045CD01 /* DatePickerTextField.swift in Sources */,
 				4364CA58289D8AC900CBE229 /* DisputeFormViewModel.swift in Sources */,

@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 
 struct MultiTextFormCellView: View {
-    private let viewModel: FormElementViewModel
+    @ObservedObject private(set) var viewModel: FormElementViewModel
     private let formValueChanges: PassthroughSubject<FormElementValueChange, Never>
     
     @State private(set) var values: [String]
@@ -41,6 +41,9 @@ struct MultiTextFormCellView: View {
                     })
                     .keyboardType(keyboardType)
                 }
+                if viewModel.isInError {
+                    TextFieldErrorView(title: "This field is required.")
+                }
             }
             Button(addButtonTitle) {
                 withAnimation {
@@ -52,7 +55,7 @@ struct MultiTextFormCellView: View {
         .frame(maxWidth: .infinity)
         .padding(.all, 30.0)
         .background(Color.white)
-        
+        .animation(.default, value: viewModel.isInError)
     }
 }
 
@@ -65,7 +68,8 @@ struct MultiTextFormCellView_Previews: PreviewProvider {
                     type: .multiText(placeholder: "Test value...", addFieldTitle: "+ Add here", keyboardType: .numberPad),
                     title: "This is a test form element. Right?"
                 ),
-                value: nil
+                value: nil,
+                isInReview: false
             ),
             formValueChanges: PassthroughSubject()
         )

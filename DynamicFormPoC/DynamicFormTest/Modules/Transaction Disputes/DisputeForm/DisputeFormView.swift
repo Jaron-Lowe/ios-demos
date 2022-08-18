@@ -4,6 +4,7 @@ import SwiftUIX
 
 struct DisputeFormView: View {
     @ObservedObject private(set) var viewModel: DisputeFormViewModel
+    @State private(set) var focusState: String?
     
     // MARK: Inputs
     private let viewDidLoads = PassthroughSubject<Void, Never>()
@@ -51,6 +52,7 @@ struct DisputeFormView: View {
                     }
                     .frame(maxHeight: .infinity)
                     .onReceive(viewModel.$nextInvalidElement, perform: { nextKey in
+                        focusState = nextKey
                         withAnimation {
                             reader.scrollTo(nextKey, anchor: .bottom)
                         }
@@ -67,7 +69,7 @@ struct DisputeFormView: View {
         case .radio:
             RadioFormCellView(viewModel: viewModel, formValueChanges: formValueChanges)
         case .text:
-            TextFormCellView(viewModel: viewModel, formValueChanges: formValueChanges)
+            TextFormCellView(viewModel: viewModel, formValueChanges: formValueChanges, focusState: $focusState)
         case .email:
             EmailFormCellView(viewModel: viewModel, formValueChanges: formValueChanges)
         case .multiText:

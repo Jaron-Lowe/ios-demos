@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 
 struct RadioFormCellView: View {
-    let viewModel: FormElementViewModel
+    @ObservedObject private(set) var viewModel: FormElementViewModel
     let formValueChanges: PassthroughSubject<FormElementValueChange, Never>
     
     var body: some View {
@@ -40,11 +40,15 @@ struct RadioFormCellView: View {
                     }
                 }
                 .frame(maxWidth: .infinity)
+                if viewModel.isInError {
+                    TextFieldErrorView(title: "This field is required.")
+                }
             }
         }
         .frame(maxWidth: .infinity)
         .padding(.all, 30.0)
         .background(Color.white)
+        .animation(.default, value: viewModel.isInError)
     }
 }
 
@@ -57,7 +61,8 @@ struct RadioFormCellView_Previews: PreviewProvider {
                     type: .radio(options: ["YES", "NO"]),
                     title: "This is a test form element. Right?"
                 ),
-                value: .radio(0)
+                value: .radio(0),
+                isInReview: false
             ),
             formValueChanges: PassthroughSubject()
         )

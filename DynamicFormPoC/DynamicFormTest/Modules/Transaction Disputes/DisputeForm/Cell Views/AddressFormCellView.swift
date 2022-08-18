@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 
 struct AddressFormCellView: View {
-    private let viewModel: FormElementViewModel
+    @ObservedObject private(set) var viewModel: FormElementViewModel
     private let formValueChanges: PassthroughSubject<FormElementValueChange, Never>
     
     @State private(set) var address1: String
@@ -10,7 +10,6 @@ struct AddressFormCellView: View {
     @State private(set) var city: String
     @State private(set) var state: String
     @State private(set) var postalCode: String
-    @State private(set) var isValid = true
     
     init(viewModel: FormElementViewModel, formValueChanges: PassthroughSubject<FormElementValueChange, Never>) {
         self.viewModel = viewModel
@@ -54,21 +53,19 @@ struct AddressFormCellView: View {
                     processTextEditingChange(isEditing: isEditing)
                 }
             }
-            if !isValid {
+            if viewModel.isInError {
                 TextFieldErrorView(title: "Please enter a valid address.")
             }
         }
         .frame(maxWidth: .infinity)
         .padding(.all, 30.0)
         .background(Color.white)
+        .animation(.default, value: viewModel.isInError)
     }
     
     func processTextEditingChange(isEditing: Bool) {
         guard !isEditing else { return }
         let address = Address(address1: address1, address2: address2, city: city, state: state, postalCode: postalCode)
-        withAnimation {
-            isValid = address.isValid
-        }
         formValueChanges.send(FormElementValueChange(key: viewModel.element.key, value: .address(address)))
     }
 }
@@ -78,7 +75,8 @@ struct AddressFormCellView_Previews: PreviewProvider {
         AddressFormCellView(
             viewModel: FormElementViewModel(
                 element: Form.Element(key: "A", type: .address, title: "This is a question."),
-                value: nil
+                value: nil,
+                isInReview: false
             ),
             formValueChanges: PassthroughSubject()
         )

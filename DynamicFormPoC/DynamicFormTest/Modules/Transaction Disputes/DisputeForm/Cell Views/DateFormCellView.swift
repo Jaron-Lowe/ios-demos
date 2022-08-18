@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 
 struct DateFormCellView: View {
-    private let viewModel: FormElementViewModel
+    @ObservedObject private(set) var viewModel: FormElementViewModel
     private let formValueChanges: PassthroughSubject<FormElementValueChange, Never>
     
     @State private(set) var dateValue: Date? = nil
@@ -28,10 +28,14 @@ struct DateFormCellView: View {
                     guard let newDate = newValue else { return }
                     formValueChanges.send(FormElementValueChange(key: viewModel.element.key, value: .date(newDate)))
                 }
+            if viewModel.isInError {
+                TextFieldErrorView(title: "This field is required.")
+            }
         }
         .frame(maxWidth: .infinity)
         .padding(.all, 30.0)
         .background(Color.white)
+        .animation(.default, value: viewModel.isInError)
         .onAppear {
             if case .date(let date) = viewModel.value {
                 dateValue = date
@@ -45,7 +49,8 @@ struct DateFormCellView_Previews: PreviewProvider {
         DateFormCellView(
             viewModel: FormElementViewModel(
                 element: Form.Element(key: "A", type: .date(range: Date.distantPast...Date.distantFuture), title: "What date answers this question?"),
-                value: nil
+                value: nil,
+                isInReview: false
             ),
             formValueChanges: PassthroughSubject()
         )

@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 
 struct CurrencyFormCellView: View {
-    let viewModel: FormElementViewModel
+    @ObservedObject var viewModel: FormElementViewModel
     let formValueChanges: PassthroughSubject<FormElementValueChange, Never>
     
     var body: some View {
@@ -26,7 +26,8 @@ struct CurrencyFormCellView_Previews: PreviewProvider {
         CurrencyFormCellView(
             viewModel: FormElementViewModel(
                 element: Form.Element(key: "A", type: .currency(placeholder: "Amount"), title: "How much money is this question wanting?"),
-                value: nil
+                value: nil,
+                isInReview: false
             ),
             formValueChanges: PassthroughSubject()
         )

@@ -56,7 +56,8 @@ struct EmailFormCellView_Previews: PreviewProvider {
                     type: .email,
                     title: "Email Address"
                 ),
-                value: .multiText(["example@example.com", ""])
+                value: .multiText(["example@example.com", ""]),
+                isInReview: false
             ),
             formValueChanges: PassthroughSubject()
         )

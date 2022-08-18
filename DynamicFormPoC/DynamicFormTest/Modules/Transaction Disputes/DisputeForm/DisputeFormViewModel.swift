@@ -35,6 +35,7 @@ extension DisputeFormViewModel: BindableViewModel {
     struct Compositions {
         let formStructure: AnyPublisher<Form, Never>
         let formValues: AnyPublisher<[String: FormElementValue], Never>
+        let isInReview: AnyPublisher<Bool, Never>
         let hasPageChanges: AnyPublisher<Bool, Never>
     }
     
@@ -45,6 +46,7 @@ extension DisputeFormViewModel: BindableViewModel {
         let compositions = Compositions(
             formStructure: formStructure,
             formValues: formValues(inputs: inputs),
+            isInReview: isInReview(inputs: inputs),
             hasPageChanges: hasPageChanges(inputs: inputs)
         )
         
@@ -82,6 +84,16 @@ private extension DisputeFormViewModel {
             .eraseToAnyPublisher()
     }
     
+    func isInReview(inputs: Inputs) -> AnyPublisher<Bool, Never> {
+        return inputs.reviewDisputeButtonTaps
+            .scan(false) { accumulator, _ in
+                return !accumulator
+            }
+            .prepend(false)
+            .share()
+            .eraseToAnyPublisher()
+    }
+    
     func isAtTerminatingElement(formElements: AnyPublisher<[FormElementViewModel], Never>) -> AnyPublisher<Bool, Never> {
         return formElements
             .map { $0.last?.value != nil }
@@ -108,19 +120,24 @@ private extension DisputeFormViewModel {
     }
     
     func formElements(compositions: Compositions) -> AnyPublisher<[FormElementViewModel], Never> {
-        return Publishers.CombineLatest(compositions.formStructure, compositions.formValues)
-            .map { formStructure, values in
-                var formElements: [FormElementViewModel] = []
-                for element in formStructure.elements {
-                    guard formElements.canMakeAvailable(element: element, values: values) else { continue }
-                    formElements.append(FormElementViewModel(element: element, value: values[element.key]))
-                }
-                return formElements
+        return Publishers.CombineLatest3(
+            compositions.formStructure,
+            compositions.formValues,
+            compositions.isInReview
+        )
+        .map { formStructure, values, isInReview in
+            var formElements: [FormElementViewModel] = []
+            for element in formStructure.elements {
+                guard formElements.canMakeAvailable(element: element, values: values) else { continue }
+                formElements.append(FormElementViewModel(element: element, value: values[element.key], isInReview: isInReview))
             }
-            .print("--- formElements")
-            .receive(on: DispatchQueue.main)
-            .share()
-            .eraseToAnyPublisher()
+            formElements.applyErrorStates()
+            return formElements
+        }
+        .print("--- formElements")
+        .receive(on: DispatchQueue.main)
+        .share()
+        .eraseToAnyPublisher()
     }
     
     func nextInvalidElement(formElements: AnyPublisher<[FormElementViewModel], Never>) -> AnyPublisher<String, Never> {
@@ -129,6 +146,7 @@ private extension DisputeFormViewModel {
                 guard let nextItem = formElements.first(where: { $0.value?.isValid == false || $0.value == nil }) else { return "bottom" }
                 return nextItem.element.key
             }
+            .dropFirst()
             .delay(for: .milliseconds(100), scheduler: RunLoop.main)
             .print("--- nextInvalidElement")
             .receive(on: DispatchQueue.main)

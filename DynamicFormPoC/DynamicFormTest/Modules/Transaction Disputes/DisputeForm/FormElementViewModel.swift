@@ -5,10 +5,14 @@ class FormElementViewModel: Identifiable, ObservableObject {
     
     let element: Form.Element
     let value: FormElementValue?
+    let isInReview: Bool
+    @Published fileprivate(set) var isInError: Bool
     
-    init(element: Form.Element, value: FormElementValue?) {
+    init(element: Form.Element, value: FormElementValue?, isInReview: Bool, isInError: Bool = false) {
         self.element = element
         self.value = value
+        self.isInReview = isInReview
+        self.isInError = false
     }
 }
 
@@ -32,5 +36,13 @@ extension Array where Element == FormElementViewModel {
             if parent.index == nil || parent.index == valueIndex { return true }
         }
         return false
+    }
+    
+    func applyErrorStates() {
+        var laterValueWasEncountered = false
+        for viewModel in self.reversed() {
+            if !laterValueWasEncountered && viewModel.value != nil { laterValueWasEncountered = true }
+            viewModel.isInError = (laterValueWasEncountered && viewModel.element.isRequired && viewModel.value?.isValid != true)
+        }
     }
 }
