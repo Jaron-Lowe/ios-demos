@@ -1,0 +1,699 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB992DA92A4C7D2F00282027 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB992DA82A4C7D2F00282027 /* Person.swift */; };
+		BB992DAB2A4C7D6B00282027 /* GetPeopleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB992DAA2A4C7D6B00282027 /* GetPeopleRequest.swift */; };
+		BBE00A7B2A3902F3000B33A1 /* TandemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE00A7A2A3902F3000B33A1 /* TandemApp.swift */; };
+		BBE00A7F2A3902F6000B33A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE00A7E2A3902F6000B33A1 /* Assets.xcassets */; };
+		BBE00A822A3902F6000B33A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE00A812A3902F6000B33A1 /* Preview Assets.xcassets */; };
+		BBE00A8C2A3902F6000B33A1 /* TandemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE00A8B2A3902F6000B33A1 /* TandemTests.swift */; };
+		BBE00A962A3902F6000B33A1 /* TandemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE00A952A3902F6000B33A1 /* TandemUITests.swift */; };
+		BBE00A982A3902F6000B33A1 /* TandemUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE00A972A3902F6000B33A1 /* TandemUITestsLaunchTests.swift */; };
+		BBE00AA62A390587000B33A1 /* SimpleApiClient in Frameworks */ = {isa = PBXBuildFile; productRef = BBE00AA52A390587000B33A1 /* SimpleApiClient */; };
+		BBE00AAA2A3905B5000B33A1 /* PeopleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE00AA92A3905B5000B33A1 /* PeopleService.swift */; };
+		BBE00AAE2A3905D6000B33A1 /* PeopleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE00AAD2A3905D6000B33A1 /* PeopleListViewModel.swift */; };
+		BBE00AB02A3905F0000B33A1 /* PeopleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE00AAF2A3905F0000B33A1 /* PeopleListView.swift */; };
+		BBE00AB52A3906B7000B33A1 /* TandemClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE00AB42A3906B7000B33A1 /* TandemClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BBE00A882A3902F6000B33A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBE00A6F2A3902F3000B33A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBE00A762A3902F3000B33A1;
+			remoteInfo = Tandem;
+		};
+		BBE00A922A3902F6000B33A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBE00A6F2A3902F3000B33A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBE00A762A3902F3000B33A1;
+			remoteInfo = Tandem;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BB992DA82A4C7D2F00282027 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		BB992DAA2A4C7D6B00282027 /* GetPeopleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPeopleRequest.swift; sourceTree = "<group>"; };
+		BBE00A772A3902F3000B33A1 /* Tandem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tandem.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBE00A7A2A3902F3000B33A1 /* TandemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TandemApp.swift; sourceTree = "<group>"; };
+		BBE00A7E2A3902F6000B33A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BBE00A812A3902F6000B33A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BBE00A872A3902F6000B33A1 /* TandemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TandemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBE00A8B2A3902F6000B33A1 /* TandemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TandemTests.swift; sourceTree = "<group>"; };
+		BBE00A912A3902F6000B33A1 /* TandemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TandemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBE00A952A3902F6000B33A1 /* TandemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TandemUITests.swift; sourceTree = "<group>"; };
+		BBE00A972A3902F6000B33A1 /* TandemUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TandemUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BBE00AA92A3905B5000B33A1 /* PeopleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleService.swift; sourceTree = "<group>"; };
+		BBE00AAD2A3905D6000B33A1 /* PeopleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewModel.swift; sourceTree = "<group>"; };
+		BBE00AAF2A3905F0000B33A1 /* PeopleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListView.swift; sourceTree = "<group>"; };
+		BBE00AB42A3906B7000B33A1 /* TandemClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TandemClient.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBE00A742A3902F3000B33A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBE00AA62A390587000B33A1 /* SimpleApiClient in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBE00A842A3902F6000B33A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBE00A8E2A3902F6000B33A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BBE00A6E2A3902F3000B33A1 = {
+			isa = PBXGroup;
+			children = (
+				BBE00A792A3902F3000B33A1 /* Tandem */,
+				BBE00A8A2A3902F6000B33A1 /* TandemTests */,
+				BBE00A942A3902F6000B33A1 /* TandemUITests */,
+				BBE00A782A3902F3000B33A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BBE00A782A3902F3000B33A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBE00A772A3902F3000B33A1 /* Tandem.app */,
+				BBE00A872A3902F6000B33A1 /* TandemTests.xctest */,
+				BBE00A912A3902F6000B33A1 /* TandemUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBE00A792A3902F3000B33A1 /* Tandem */ = {
+			isa = PBXGroup;
+			children = (
+				BBE00ABA2A3921BF000B33A1 /* Resources */,
+				BBE00AA72A390594000B33A1 /* Src */,
+			);
+			path = Tandem;
+			sourceTree = "<group>";
+		};
+		BBE00A802A3902F6000B33A1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BBE00A812A3902F6000B33A1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BBE00A8A2A3902F6000B33A1 /* TandemTests */ = {
+			isa = PBXGroup;
+			children = (
+				BBE00A8B2A3902F6000B33A1 /* TandemTests.swift */,
+			);
+			path = TandemTests;
+			sourceTree = "<group>";
+		};
+		BBE00A942A3902F6000B33A1 /* TandemUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BBE00A952A3902F6000B33A1 /* TandemUITests.swift */,
+				BBE00A972A3902F6000B33A1 /* TandemUITestsLaunchTests.swift */,
+			);
+			path = TandemUITests;
+			sourceTree = "<group>";
+		};
+		BBE00AA72A390594000B33A1 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				BBE00A7A2A3902F3000B33A1 /* TandemApp.swift */,
+				BBE00AB92A391AC0000B33A1 /* Networking */,
+				BBE00AAB2A3905BD000B33A1 /* People Module */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
+		BBE00AA82A39059A000B33A1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BBE00AA92A3905B5000B33A1 /* PeopleService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BBE00AAB2A3905BD000B33A1 /* People Module */ = {
+			isa = PBXGroup;
+			children = (
+				BBE00AB62A390746000B33A1 /* API Requests */,
+				BBE00AB12A390664000B33A1 /* Models */,
+				BBE00AA82A39059A000B33A1 /* Services */,
+				BBE00AAC2A3905C9000B33A1 /* Views */,
+			);
+			path = "People Module";
+			sourceTree = "<group>";
+		};
+		BBE00AAC2A3905C9000B33A1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BBE00AAD2A3905D6000B33A1 /* PeopleListViewModel.swift */,
+				BBE00AAF2A3905F0000B33A1 /* PeopleListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BBE00AB12A390664000B33A1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB992DA82A4C7D2F00282027 /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BBE00AB62A390746000B33A1 /* API Requests */ = {
+			isa = PBXGroup;
+			children = (
+				BB992DAA2A4C7D6B00282027 /* GetPeopleRequest.swift */,
+			);
+			path = "API Requests";
+			sourceTree = "<group>";
+		};
+		BBE00AB92A391AC0000B33A1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BBE00AB42A3906B7000B33A1 /* TandemClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		BBE00ABA2A3921BF000B33A1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BBE00A802A3902F6000B33A1 /* Preview Content */,
+				BBE00A7E2A3902F6000B33A1 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BBE00A762A3902F3000B33A1 /* Tandem */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBE00A9B2A3902F6000B33A1 /* Build configuration list for PBXNativeTarget "Tandem" */;
+			buildPhases = (
+				BBE00A732A3902F3000B33A1 /* Sources */,
+				BBE00A742A3902F3000B33A1 /* Frameworks */,
+				BBE00A752A3902F3000B33A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tandem;
+			packageProductDependencies = (
+				BBE00AA52A390587000B33A1 /* SimpleApiClient */,
+			);
+			productName = Tandem;
+			productReference = BBE00A772A3902F3000B33A1 /* Tandem.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BBE00A862A3902F6000B33A1 /* TandemTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBE00A9E2A3902F6000B33A1 /* Build configuration list for PBXNativeTarget "TandemTests" */;
+			buildPhases = (
+				BBE00A832A3902F6000B33A1 /* Sources */,
+				BBE00A842A3902F6000B33A1 /* Frameworks */,
+				BBE00A852A3902F6000B33A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBE00A892A3902F6000B33A1 /* PBXTargetDependency */,
+			);
+			name = TandemTests;
+			productName = TandemTests;
+			productReference = BBE00A872A3902F6000B33A1 /* TandemTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BBE00A902A3902F6000B33A1 /* TandemUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBE00AA12A3902F6000B33A1 /* Build configuration list for PBXNativeTarget "TandemUITests" */;
+			buildPhases = (
+				BBE00A8D2A3902F6000B33A1 /* Sources */,
+				BBE00A8E2A3902F6000B33A1 /* Frameworks */,
+				BBE00A8F2A3902F6000B33A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBE00A932A3902F6000B33A1 /* PBXTargetDependency */,
+			);
+			name = TandemUITests;
+			productName = TandemUITests;
+			productReference = BBE00A912A3902F6000B33A1 /* TandemUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BBE00A6F2A3902F3000B33A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					BBE00A762A3902F3000B33A1 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					BBE00A862A3902F6000B33A1 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = BBE00A762A3902F3000B33A1;
+					};
+					BBE00A902A3902F6000B33A1 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = BBE00A762A3902F3000B33A1;
+					};
+				};
+			};
+			buildConfigurationList = BBE00A722A3902F3000B33A1 /* Build configuration list for PBXProject "Tandem" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BBE00A6E2A3902F3000B33A1;
+			packageReferences = (
+				BBE00AA42A390587000B33A1 /* XCRemoteSwiftPackageReference "SimpleApiClient" */,
+			);
+			productRefGroup = BBE00A782A3902F3000B33A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBE00A762A3902F3000B33A1 /* Tandem */,
+				BBE00A862A3902F6000B33A1 /* TandemTests */,
+				BBE00A902A3902F6000B33A1 /* TandemUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BBE00A752A3902F3000B33A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBE00A822A3902F6000B33A1 /* Preview Assets.xcassets in Resources */,
+				BBE00A7F2A3902F6000B33A1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBE00A852A3902F6000B33A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBE00A8F2A3902F6000B33A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBE00A732A3902F3000B33A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBE00AB52A3906B7000B33A1 /* TandemClient.swift in Sources */,
+				BBE00AAE2A3905D6000B33A1 /* PeopleListViewModel.swift in Sources */,
+				BBE00AB02A3905F0000B33A1 /* PeopleListView.swift in Sources */,
+				BBE00A7B2A3902F3000B33A1 /* TandemApp.swift in Sources */,
+				BB992DA92A4C7D2F00282027 /* Person.swift in Sources */,
+				BBE00AAA2A3905B5000B33A1 /* PeopleService.swift in Sources */,
+				BB992DAB2A4C7D6B00282027 /* GetPeopleRequest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBE00A832A3902F6000B33A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBE00A8C2A3902F6000B33A1 /* TandemTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBE00A8D2A3902F6000B33A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBE00A962A3902F6000B33A1 /* TandemUITests.swift in Sources */,
+				BBE00A982A3902F6000B33A1 /* TandemUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BBE00A892A3902F6000B33A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBE00A762A3902F3000B33A1 /* Tandem */;
+			targetProxy = BBE00A882A3902F6000B33A1 /* PBXContainerItemProxy */;
+		};
+		BBE00A932A3902F6000B33A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBE00A762A3902F3000B33A1 /* Tandem */;
+			targetProxy = BBE00A922A3902F6000B33A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BBE00A992A3902F6000B33A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BBE00A9A2A3902F6000B33A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BBE00A9C2A3902F6000B33A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Tandem/Preview Content\"";
+				DEVELOPMENT_TEAM = UL3RBMBKF2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lowe.Tandem;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BBE00A9D2A3902F6000B33A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Tandem/Preview Content\"";
+				DEVELOPMENT_TEAM = UL3RBMBKF2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lowe.Tandem;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BBE00A9F2A3902F6000B33A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UL3RBMBKF2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lowe.TandemTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tandem.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tandem";
+			};
+			name = Debug;
+		};
+		BBE00AA02A3902F6000B33A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UL3RBMBKF2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lowe.TandemTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tandem.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tandem";
+			};
+			name = Release;
+		};
+		BBE00AA22A3902F6000B33A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UL3RBMBKF2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lowe.TandemUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Tandem;
+			};
+			name = Debug;
+		};
+		BBE00AA32A3902F6000B33A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UL3RBMBKF2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lowe.TandemUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Tandem;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BBE00A722A3902F3000B33A1 /* Build configuration list for PBXProject "Tandem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBE00A992A3902F6000B33A1 /* Debug */,
+				BBE00A9A2A3902F6000B33A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBE00A9B2A3902F6000B33A1 /* Build configuration list for PBXNativeTarget "Tandem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBE00A9C2A3902F6000B33A1 /* Debug */,
+				BBE00A9D2A3902F6000B33A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBE00A9E2A3902F6000B33A1 /* Build configuration list for PBXNativeTarget "TandemTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBE00A9F2A3902F6000B33A1 /* Debug */,
+				BBE00AA02A3902F6000B33A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBE00AA12A3902F6000B33A1 /* Build configuration list for PBXNativeTarget "TandemUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBE00AA22A3902F6000B33A1 /* Debug */,
+				BBE00AA32A3902F6000B33A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BBE00AA42A390587000B33A1 /* XCRemoteSwiftPackageReference "SimpleApiClient" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Jaron-Lowe/SimpleApiClient.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BBE00AA52A390587000B33A1 /* SimpleApiClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBE00AA42A390587000B33A1 /* XCRemoteSwiftPackageReference "SimpleApiClient" */;
+			productName = SimpleApiClient;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = BBE00A6F2A3902F3000B33A1 /* Project object */;
+}

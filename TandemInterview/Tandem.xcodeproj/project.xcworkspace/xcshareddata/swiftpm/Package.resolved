@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "simpleapiclient",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Jaron-Lowe/SimpleApiClient.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "4f541c721672f69e3015ebbd298c48f516997c6c"
+      }
+    }
+  ],
+  "version" : 2
+}
