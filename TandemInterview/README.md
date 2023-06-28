@@ -46,3 +46,6 @@ people.json
 2. Display each person in a list
 3. Display each person's favorite language, or "Unknown" if not given
 4. Email project to rstephens@tandemdiabetes.com
+
+## Final Result
+![Example](https://github.com/Jaron-Lowe/ios-demos/assets/10712389/556dd6cb-2bfc-4eb7-b7a9-71c6cd88ae62)
