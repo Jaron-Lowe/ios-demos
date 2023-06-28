@@ -1,15 +1,17 @@
-#### Tandem Diabetes Principal iOS Developer Interview
+# Tandem Diabetes Principal iOS Developer Interview
 
-# Restrictions
+## Restrictions
 1. UIKit or SwiftUI (Preferred)
 2. Was able to use my own external networking package.
 
 ## Prompt
-// Using this list of names:
+Using this list of names:
 
-// https://gist.github.com/russellbstephens/41e3b81879cf096212fc9834be0407b5
+https://gist.github.com/russellbstephens/41e3b81879cf096212fc9834be0407b5
+
 people.json
-`{
+```
+{
 	"people": [{
 		"name": "Russ",
 		"language": "swift"
@@ -37,9 +39,10 @@ people.json
 	}, {
 		"name": "Margie"
 	}]
-}`
+}
+```
 
-Parse the json into models
-Display each person in a list
-Display each person's favorite language, or "Unknown" if not given
-Email project to rstephens@tandemdiabetes.com
+1. Parse the json into models
+2. Display each person in a list
+3. Display each person's favorite language, or "Unknown" if not given
+4. Email project to rstephens@tandemdiabetes.com
