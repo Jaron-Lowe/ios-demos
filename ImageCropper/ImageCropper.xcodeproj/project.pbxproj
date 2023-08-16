@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB6237962A85699C00DFB48E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6237952A85699C00DFB48E /* AppDelegate.swift */; };
+		BB6237982A85699C00DFB48E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6237972A85699C00DFB48E /* SceneDelegate.swift */; };
+		BB62379A2A85699C00DFB48E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6237992A85699C00DFB48E /* ViewController.swift */; };
+		BB62379D2A85699C00DFB48E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB62379B2A85699C00DFB48E /* Main.storyboard */; };
+		BB62379F2A85699E00DFB48E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB62379E2A85699E00DFB48E /* Assets.xcassets */; };
+		BB6237A22A85699E00DFB48E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB6237A02A85699E00DFB48E /* LaunchScreen.storyboard */; };
+		BB6237AD2A856B5C00DFB48E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = BB6237AC2A856B5C00DFB48E /* ComposableArchitecture */; };
+		BB6237B12A856EE000DFB48E /* ImageCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6237AF2A856EE000DFB48E /* ImageCropViewController.swift */; };
+		BBAA59E32A8BCA9B009C33C8 /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAA59E22A8BCA9B009C33C8 /* CropView.swift */; };
+		BBAA59E82A8BFEF5009C33C8 /* XScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAA59E72A8BFEF5009C33C8 /* XScrollView.swift */; };
+		BBAA59EA2A8BFF1C009C33C8 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAA59E92A8BFF1C009C33C8 /* View.swift */; };
+		BBCF520A2A8A7880009469AC /* ImageCropReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCF52092A8A7880009469AC /* ImageCropReducer.swift */; };
+		BBCF520C2A8A89D5009469AC /* TCAImageCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCF520B2A8A89D5009469AC /* TCAImageCropViewController.swift */; };
+		BBCF520E2A8A89F2009469AC /* ImageCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCF520D2A8A89F2009469AC /* ImageCropView.swift */; };
+		BBCF52102A8A8AA0009469AC /* ImageCropTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCF520F2A8A8AA0009469AC /* ImageCropTypes.swift */; };
+		BBCF52132A8ABA60009469AC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCF52122A8ABA60009469AC /* UIImage.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BB6237922A85699C00DFB48E /* ImageCropper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageCropper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB6237952A85699C00DFB48E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB6237972A85699C00DFB48E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BB6237992A85699C00DFB48E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB62379C2A85699C00DFB48E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB62379E2A85699E00DFB48E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB6237A12A85699E00DFB48E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BB6237A32A85699E00DFB48E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB6237AF2A856EE000DFB48E /* ImageCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropViewController.swift; sourceTree = "<group>"; };
+		BBAA59E22A8BCA9B009C33C8 /* CropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropView.swift; sourceTree = "<group>"; };
+		BBAA59E72A8BFEF5009C33C8 /* XScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XScrollView.swift; sourceTree = "<group>"; };
+		BBAA59E92A8BFF1C009C33C8 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		BBCF52092A8A7880009469AC /* ImageCropReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropReducer.swift; sourceTree = "<group>"; };
+		BBCF520B2A8A89D5009469AC /* TCAImageCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAImageCropViewController.swift; sourceTree = "<group>"; };
+		BBCF520D2A8A89F2009469AC /* ImageCropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropView.swift; sourceTree = "<group>"; };
+		BBCF520F2A8A8AA0009469AC /* ImageCropTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropTypes.swift; sourceTree = "<group>"; };
+		BBCF52122A8ABA60009469AC /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB62378F2A85699C00DFB48E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB6237AD2A856B5C00DFB48E /* ComposableArchitecture in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB6237892A85699C00DFB48E = {
+			isa = PBXGroup;
+			children = (
+				BB6237942A85699C00DFB48E /* ImageCropper */,
+				BB6237932A85699C00DFB48E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BB6237932A85699C00DFB48E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB6237922A85699C00DFB48E /* ImageCropper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB6237942A85699C00DFB48E /* ImageCropper */ = {
+			isa = PBXGroup;
+			children = (
+				BBAA59DD2A8BC5FE009C33C8 /* Src */,
+				BBAA59DC2A8BC5EB009C33C8 /* Test Images */,
+				BB6237A92A856A4C00DFB48E /* Setup */,
+			);
+			path = ImageCropper;
+			sourceTree = "<group>";
+		};
+		BB6237A92A856A4C00DFB48E /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				BB6237952A85699C00DFB48E /* AppDelegate.swift */,
+				BB6237972A85699C00DFB48E /* SceneDelegate.swift */,
+				BB62379B2A85699C00DFB48E /* Main.storyboard */,
+				BB62379E2A85699E00DFB48E /* Assets.xcassets */,
+				BB6237A02A85699E00DFB48E /* LaunchScreen.storyboard */,
+				BB6237A32A85699E00DFB48E /* Info.plist */,
+			);
+			name = Setup;
+			sourceTree = "<group>";
+		};
+		BBAA59DB2A8BC5E1009C33C8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BBCF52122A8ABA60009469AC /* UIImage.swift */,
+				BBAA59E92A8BFF1C009C33C8 /* View.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BBAA59DC2A8BC5EB009C33C8 /* Test Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Test Images";
+			sourceTree = "<group>";
+		};
+		BBAA59DD2A8BC5FE009C33C8 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				BB6237992A85699C00DFB48E /* ViewController.swift */,
+				BBAA59DE2A8BC60A009C33C8 /* ImageCropViewController */,
+				BBAA59DB2A8BC5E1009C33C8 /* Extensions */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
+		BBAA59DE2A8BC60A009C33C8 /* ImageCropViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BBAA59E12A8BCA89009C33C8 /* SwiftUI */,
+				BBAA59E02A8BCA75009C33C8 /* UIKit */,
+				BBCF52092A8A7880009469AC /* ImageCropReducer.swift */,
+				BBCF520F2A8A8AA0009469AC /* ImageCropTypes.swift */,
+			);
+			path = ImageCropViewController;
+			sourceTree = "<group>";
+		};
+		BBAA59E02A8BCA75009C33C8 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				BB6237AF2A856EE000DFB48E /* ImageCropViewController.swift */,
+				BBCF520B2A8A89D5009469AC /* TCAImageCropViewController.swift */,
+				BBCF520D2A8A89F2009469AC /* ImageCropView.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		BBAA59E12A8BCA89009C33C8 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				BBAA59E22A8BCA9B009C33C8 /* CropView.swift */,
+				BBAA59E72A8BFEF5009C33C8 /* XScrollView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB6237912A85699C00DFB48E /* ImageCropper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB6237A62A85699E00DFB48E /* Build configuration list for PBXNativeTarget "ImageCropper" */;
+			buildPhases = (
+				BB62378E2A85699C00DFB48E /* Sources */,
+				BB62378F2A85699C00DFB48E /* Frameworks */,
+				BB6237902A85699C00DFB48E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImageCropper;
+			packageProductDependencies = (
+				BB6237AC2A856B5C00DFB48E /* ComposableArchitecture */,
+			);
+			productName = ImageCropper;
+			productReference = BB6237922A85699C00DFB48E /* ImageCropper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB62378A2A85699C00DFB48E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					BB6237912A85699C00DFB48E = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = BB62378D2A85699C00DFB48E /* Build configuration list for PBXProject "ImageCropper" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB6237892A85699C00DFB48E;
+			packageReferences = (
+				BB6237AB2A856B5C00DFB48E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
+			productRefGroup = BB6237932A85699C00DFB48E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB6237912A85699C00DFB48E /* ImageCropper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB6237902A85699C00DFB48E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB6237A22A85699E00DFB48E /* LaunchScreen.storyboard in Resources */,
+				BB62379F2A85699E00DFB48E /* Assets.xcassets in Resources */,
+				BB62379D2A85699C00DFB48E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB62378E2A85699C00DFB48E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBCF520C2A8A89D5009469AC /* TCAImageCropViewController.swift in Sources */,
+				BB62379A2A85699C00DFB48E /* ViewController.swift in Sources */,
+				BB6237962A85699C00DFB48E /* AppDelegate.swift in Sources */,
+				BBCF52102A8A8AA0009469AC /* ImageCropTypes.swift in Sources */,
+				BBAA59E32A8BCA9B009C33C8 /* CropView.swift in Sources */,
+				BBCF520A2A8A7880009469AC /* ImageCropReducer.swift in Sources */,
+				BB6237B12A856EE000DFB48E /* ImageCropViewController.swift in Sources */,
+				BBCF52132A8ABA60009469AC /* UIImage.swift in Sources */,
+				BBAA59EA2A8BFF1C009C33C8 /* View.swift in Sources */,
+				BBAA59E82A8BFEF5009C33C8 /* XScrollView.swift in Sources */,
+				BBCF520E2A8A89F2009469AC /* ImageCropView.swift in Sources */,
+				BB6237982A85699C00DFB48E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BB62379B2A85699C00DFB48E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB62379C2A85699C00DFB48E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BB6237A02A85699E00DFB48E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB6237A12A85699E00DFB48E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BB6237A42A85699E00DFB48E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB6237A52A85699E00DFB48E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB6237A72A85699E00DFB48E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UL3RBMBKF2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ImageCropper/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access is needed to select photos to crop.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lowe.ImageCropper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB6237A82A85699E00DFB48E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UL3RBMBKF2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ImageCropper/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access is needed to select photos to crop.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lowe.ImageCropper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB62378D2A85699C00DFB48E /* Build configuration list for PBXProject "ImageCropper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB6237A42A85699E00DFB48E /* Debug */,
+				BB6237A52A85699E00DFB48E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB6237A62A85699E00DFB48E /* Build configuration list for PBXNativeTarget "ImageCropper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB6237A72A85699E00DFB48E /* Debug */,
+				BB6237A82A85699E00DFB48E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BB6237AB2A856B5C00DFB48E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BB6237AC2A856B5C00DFB48E /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB6237AB2A856B5C00DFB48E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = BB62378A2A85699C00DFB48E /* Project object */;
+}
