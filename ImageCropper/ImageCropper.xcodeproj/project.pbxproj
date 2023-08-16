@@ -77,7 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				BBAA59DD2A8BC5FE009C33C8 /* Src */,
-				BBAA59DC2A8BC5EB009C33C8 /* Test Images */,
 				BB6237A92A856A4C00DFB48E /* Setup */,
 			);
 			path = ImageCropper;
@@ -103,13 +102,6 @@
 				BBAA59E92A8BFF1C009C33C8 /* View.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		BBAA59DC2A8BC5EB009C33C8 /* Test Images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Test Images";
 			sourceTree = "<group>";
 		};
 		BBAA59DD2A8BC5FE009C33C8 /* Src */ = {
