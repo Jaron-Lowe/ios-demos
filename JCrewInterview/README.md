@@ -1,7 +1,7 @@
 # J.Crew iOS Tech Lead Interview
 This is the result of my interview with J.Crew. The main technical interview was very short given the amount of work they wanted done. The interview ended up being me explaining what I would do further if given more time. Because it was a decent programming interview I ended up completing it later that night. I used my networking package [SimpleApiClient](https://github.com/Jaron-Lowe/SimpleApiClient) in the final project to simplify networking code that I've already written previously.
 
-Because The interview did not provide any real api endpoint the final project inserts a fake, non-existant one. In order to show diferent network conditions I wrote a `PreviewLoginService` implementing the `LoginServicing` protocol in order to simulate varying network results.
+**NOTE**: Because The interview did not provide any real api endpoint the final project inserts a fake, non-existant one. In order to show diferent network conditions I wrote a `PreviewLoginService` implementing the `LoginServicing` protocol in order to simulate varying network results.
 
 The final project has no dependency injection solution as I thought it would be overkill to spend any more time implmenting one.
 
