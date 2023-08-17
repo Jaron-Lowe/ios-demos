@@ -31,6 +31,8 @@ Failure response -> 400...499 / 500+
 ```
 
 ## Original Interview Result
+Below is my original interview result with a few tweaks to add clarity, organization, and TODOs discussed verbally.
+
 ```swift
 // Network Models
 // ============================================================================
