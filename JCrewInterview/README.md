@@ -1,11 +1,15 @@
 # J.Crew iOS Tech Lead Interview
+This is the result of my interview with J.Crew. The main technical interview was very short given the amount of work they wanted done. The interview ended up being me explaining what I would do further if given more time. Because it was a decent programming interview I ended up completing it later that night. I used my networking package [SimpleApiClient](https://github.com/Jaron-Lowe/SimpleApiClient) in the final project to simplify networking code that I've already written previously.
 
+Because The interview did not provide any real api endpoint the final project inserts a fake, non-existant one. In order to show diferent network conditions I wrote a `PreviewLoginService` implementing the `LoginServicing` protocol in order to simulate varying network results.
+
+The final project has no dependency injection solution as I thought it would be overkill to spend any more time implmenting one.
 
 ## Prompt
 - Implement a login use case following the MVVM pattern and using Swift/SwiftUI
 - 20 minute time limit
 - Focus most on networking layer structure, get to view layer last
-- Parse a success and failure response based on the following:
+- Parse a success and failure response based on the following and display them to the user as an alert:
 ```
 Endpoint ->
 POST /login
@@ -27,7 +31,7 @@ Failure response -> 400...499 / 500+
 ```
 
 ## Original Interview Result
-```
+```swift
 // Network Models
 // ============================================================================
 
@@ -103,7 +107,7 @@ public struct LoginRequest: HTTPApiRequest {
     .body(requestBody)
   }
   
-	let requestBody: LoginRequestBody
+  let requestBody: LoginRequestBody
   
   public init(requestBody: LoginCredentials) {
     self.requestBody = requestBody
@@ -197,6 +201,13 @@ struct LoginView: View {
 ```
 
 ## Final Result
-| Empty | Validation | Success | Server Error | Other Error |
-| ----- | ---------- | ------- | ------------ | ----------- |
-| | | | | |
+| Empty | Validation |
+| ----- | ---------- |
+| ![Empty_Login](https://github.com/Jaron-Lowe/ios-demos/assets/10712389/607a4f30-2533-4559-8432-4584965c8261) | ![Input_Validation](https://github.com/Jaron-Lowe/ios-demos/assets/10712389/5fddfcba-bc28-41ce-be75-9c43e6f34640) 
+
+| Success | Server Error | Other Error |
+| ------- | ------------ | ----------- |
+| ![Success](https://github.com/Jaron-Lowe/ios-demos/assets/10712389/fe481c41-bfe2-4d58-89fe-96a963a4791d) | ![Server_Error](https://github.com/Jaron-Lowe/ios-demos/assets/10712389/961a758c-1ff4-4a16-a998-8da9b3213519) | ![Unexpected_Error](https://github.com/Jaron-Lowe/ios-demos/assets/10712389/c6cc0af2-7abf-4fc3-8b38-673244ae09ac) |
+
+
+
