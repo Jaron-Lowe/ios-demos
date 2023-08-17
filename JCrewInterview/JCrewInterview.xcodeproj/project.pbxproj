@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BBABC3CE2A8D770E00B1A455 /* JCrewInterviewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABC3CD2A8D770E00B1A455 /* JCrewInterviewApp.swift */; };
+		BBABC3D22A8D770F00B1A455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBABC3D12A8D770F00B1A455 /* Assets.xcassets */; };
+		BBABC3D52A8D770F00B1A455 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBABC3D42A8D770F00B1A455 /* Preview Assets.xcassets */; };
+		BBABC3DC2A8D773300B1A455 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABC3DB2A8D773300B1A455 /* LoginViewModel.swift */; };
+		BBABC3DF2A8D777500B1A455 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABC3DE2A8D777500B1A455 /* LoginService.swift */; };
+		BBABC3E42A8D77FD00B1A455 /* ApiFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABC3E32A8D77FD00B1A455 /* ApiFailure.swift */; };
+		BBABC3E62A8D784800B1A455 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABC3E52A8D784800B1A455 /* LoginSuccess.swift */; };
+		BBABC3E82A8D787C00B1A455 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABC3E72A8D787C00B1A455 /* LoginView.swift */; };
+		BBABC3EB2A8D7A0300B1A455 /* SimpleApiClient in Frameworks */ = {isa = PBXBuildFile; productRef = BBABC3EA2A8D7A0300B1A455 /* SimpleApiClient */; };
+		BBABC3EE2A8D7A3300B1A455 /* JCrewHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABC3ED2A8D7A3300B1A455 /* JCrewHttpClient.swift */; };
+		BBABC3F22A8D97EC00B1A455 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABC3F12A8D97EC00B1A455 /* LoginRequest.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BBABC3CA2A8D770E00B1A455 /* JCrewInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JCrewInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBABC3CD2A8D770E00B1A455 /* JCrewInterviewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCrewInterviewApp.swift; sourceTree = "<group>"; };
+		BBABC3D12A8D770F00B1A455 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BBABC3D42A8D770F00B1A455 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BBABC3DB2A8D773300B1A455 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		BBABC3DE2A8D777500B1A455 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		BBABC3E32A8D77FD00B1A455 /* ApiFailure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiFailure.swift; sourceTree = "<group>"; };
+		BBABC3E52A8D784800B1A455 /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
+		BBABC3E72A8D787C00B1A455 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		BBABC3ED2A8D7A3300B1A455 /* JCrewHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCrewHttpClient.swift; sourceTree = "<group>"; };
+		BBABC3F12A8D97EC00B1A455 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBABC3C72A8D770E00B1A455 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBABC3EB2A8D7A0300B1A455 /* SimpleApiClient in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BBABC3C12A8D770D00B1A455 = {
+			isa = PBXGroup;
+			children = (
+				BBABC3CC2A8D770E00B1A455 /* JCrewInterview */,
+				BBABC3CB2A8D770E00B1A455 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BBABC3CB2A8D770E00B1A455 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBABC3CA2A8D770E00B1A455 /* JCrewInterview.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBABC3CC2A8D770E00B1A455 /* JCrewInterview */ = {
+			isa = PBXGroup;
+			children = (
+				BBABC3EC2A8D7A1B00B1A455 /* Networking */,
+				BBABC3DD2A8D775E00B1A455 /* Login */,
+				BBABC3CD2A8D770E00B1A455 /* JCrewInterviewApp.swift */,
+				BBABC3D12A8D770F00B1A455 /* Assets.xcassets */,
+				BBABC3D32A8D770F00B1A455 /* Preview Content */,
+			);
+			path = JCrewInterview;
+			sourceTree = "<group>";
+		};
+		BBABC3D32A8D770F00B1A455 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BBABC3D42A8D770F00B1A455 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BBABC3DD2A8D775E00B1A455 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BBABC3DB2A8D773300B1A455 /* LoginViewModel.swift */,
+				BBABC3E72A8D787C00B1A455 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BBABC3E12A8D77E400B1A455 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				BBABC3F12A8D97EC00B1A455 /* LoginRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		BBABC3E22A8D77EA00B1A455 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				BBABC3E52A8D784800B1A455 /* LoginSuccess.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		BBABC3EC2A8D7A1B00B1A455 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BBABC3EF2A8D97B900B1A455 /* Services */,
+				BBABC3ED2A8D7A3300B1A455 /* JCrewHttpClient.swift */,
+				BBABC3E32A8D77FD00B1A455 /* ApiFailure.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		BBABC3EF2A8D97B900B1A455 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BBABC3F02A8D97C400B1A455 /* LoginService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BBABC3F02A8D97C400B1A455 /* LoginService */ = {
+			isa = PBXGroup;
+			children = (
+				BBABC3E22A8D77EA00B1A455 /* Responses */,
+				BBABC3E12A8D77E400B1A455 /* Requests */,
+				BBABC3DE2A8D777500B1A455 /* LoginService.swift */,
+			);
+			path = LoginService;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BBABC3C92A8D770E00B1A455 /* JCrewInterview */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBABC3D82A8D770F00B1A455 /* Build configuration list for PBXNativeTarget "JCrewInterview" */;
+			buildPhases = (
+				BBABC3C62A8D770E00B1A455 /* Sources */,
+				BBABC3C72A8D770E00B1A455 /* Frameworks */,
+				BBABC3C82A8D770E00B1A455 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JCrewInterview;
+			packageProductDependencies = (
+				BBABC3EA2A8D7A0300B1A455 /* SimpleApiClient */,
+			);
+			productName = JCrewInterview;
+			productReference = BBABC3CA2A8D770E00B1A455 /* JCrewInterview.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BBABC3C22A8D770D00B1A455 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					BBABC3C92A8D770E00B1A455 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = BBABC3C52A8D770D00B1A455 /* Build configuration list for PBXProject "JCrewInterview" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BBABC3C12A8D770D00B1A455;
+			packageReferences = (
+				BBABC3E92A8D7A0300B1A455 /* XCRemoteSwiftPackageReference "SimpleApiClient" */,
+			);
+			productRefGroup = BBABC3CB2A8D770E00B1A455 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBABC3C92A8D770E00B1A455 /* JCrewInterview */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BBABC3C82A8D770E00B1A455 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBABC3D52A8D770F00B1A455 /* Preview Assets.xcassets in Resources */,
+				BBABC3D22A8D770F00B1A455 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBABC3C62A8D770E00B1A455 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBABC3E82A8D787C00B1A455 /* LoginView.swift in Sources */,
+				BBABC3EE2A8D7A3300B1A455 /* JCrewHttpClient.swift in Sources */,
+				BBABC3CE2A8D770E00B1A455 /* JCrewInterviewApp.swift in Sources */,
+				BBABC3E42A8D77FD00B1A455 /* ApiFailure.swift in Sources */,
+				BBABC3E62A8D784800B1A455 /* LoginSuccess.swift in Sources */,
+				BBABC3DC2A8D773300B1A455 /* LoginViewModel.swift in Sources */,
+				BBABC3DF2A8D777500B1A455 /* LoginService.swift in Sources */,
+				BBABC3F22A8D97EC00B1A455 /* LoginRequest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BBABC3D62A8D770F00B1A455 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BBABC3D72A8D770F00B1A455 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BBABC3D92A8D770F00B1A455 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"JCrewInterview/Preview Content\"";
+				DEVELOPMENT_TEAM = UL3RBMBKF2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lowe.JCrewInterview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BBABC3DA2A8D770F00B1A455 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"JCrewInterview/Preview Content\"";
+				DEVELOPMENT_TEAM = UL3RBMBKF2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lowe.JCrewInterview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BBABC3C52A8D770D00B1A455 /* Build configuration list for PBXProject "JCrewInterview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBABC3D62A8D770F00B1A455 /* Debug */,
+				BBABC3D72A8D770F00B1A455 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBABC3D82A8D770F00B1A455 /* Build configuration list for PBXNativeTarget "JCrewInterview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBABC3D92A8D770F00B1A455 /* Debug */,
+				BBABC3DA2A8D770F00B1A455 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BBABC3E92A8D7A0300B1A455 /* XCRemoteSwiftPackageReference "SimpleApiClient" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Jaron-Lowe/SimpleApiClient.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BBABC3EA2A8D7A0300B1A455 /* SimpleApiClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBABC3E92A8D7A0300B1A455 /* XCRemoteSwiftPackageReference "SimpleApiClient" */;
+			productName = SimpleApiClient;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = BBABC3C22A8D770D00B1A455 /* Project object */;
+}
