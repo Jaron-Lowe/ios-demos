@@ -1,6 +1,9 @@
 # iOS Demos
 A collection of various iOS demos and experiments I've created over time.
 
+## 2025
+##### [AVPlayerExtensions](/AVPlayerExtensions)
+
 ## 2023
 ##### [SwiftUICustomTextField](/SwiftUICustomTextField)
 <!--- ##### [JCrewInterview](/JCrewInterview) - J.Crew Interview --->
