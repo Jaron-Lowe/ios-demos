@@ -89,22 +89,23 @@ extension AVPlayer {
     /// - Parameters:
     ///   - percentGates: A set of playback completion percentages to trigger events for.
     ///   - interval: The rate at which completion gates should be polled.
+    ///   - shouldRetriggerGates: A flag indicating whether gates should be retriggered if playback restarts or is rewound.
     /// - Returns: A publisher that triggers when the player progress clears requested completion percentage gates.
-    public func completionGatesClearedPublisher(percentGates: Set<Double>, interval: Double = 1.0) -> AnyPublisher<Double, Never> {
+    public func completionGatesClearedPublisher(percentGates: Set<Double>, interval: Double = 1.0, shouldRetriggerGates: Bool = true) -> AnyPublisher<Double, Never> {
         let percentGates = percentGates.sorted()
         return playerProgressPublisher(interval: interval)
-            .scan((Set<Double>(), Set<Double>())) { state, latestPercent in
-                let (alreadyCleared, _) = state
+            .scan((Set<Double>(), Set<Double>(), 0.0)) { state, currentPercent in
+                let (alreadyCleared, _, previousPercent) = state
                 var toBroadcast = Set<Double>()
                 for gate in percentGates {
-                    if !alreadyCleared.contains(gate) && latestPercent >= gate {
+                    if previousPercent < gate && currentPercent >= gate && (shouldRetriggerGates || !alreadyCleared.contains(gate)) {
                         toBroadcast.insert(gate)
                     }
                 }
-                return (alreadyCleared.union(toBroadcast), toBroadcast)
+                return (alreadyCleared.union(toBroadcast), toBroadcast, currentPercent)
             }
             .compactMap { state -> Set<Double>? in
-                let (_, toBroadcast) = state
+                let (_, toBroadcast, _) = state
                 guard !toBroadcast.isEmpty else { return nil }
                 return toBroadcast
             }
