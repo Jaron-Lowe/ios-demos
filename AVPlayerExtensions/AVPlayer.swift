@@ -194,7 +194,7 @@ extension AVPlayer {
     /// A publisher of changes to an AVPlayer's player state components.
     public func playerStateComponentsPublisher(interval: Double) -> AnyPublisher<VideoPlayerStateComponents, Never> {
         durationPublisher.combineLatest(
-            periodicTimePublisher(interval: 1.0),
+            periodicTimePublisher(interval: interval),
             timeControlStatusPublisher,
             statusPublisher
         )
