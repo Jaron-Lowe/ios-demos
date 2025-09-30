@@ -144,39 +144,22 @@ public enum VideoPlayerState: Equatable {
     case finished
 }
 
-extension AVPlayer {
-    /// The current state of a video player.
+/// Holds the components that make up a `VideoPlayerState`.
+public struct VideoPlayerStateComponents: Equatable {
+    /// The duration of the current player item.
+    public let duration: Double?
+    
+    /// The current time of the current player item.
+    public let periodicTime: Double
+    
+    /// The time control status of the player.
+    public let timeControlStatus: AVPlayer.TimeControlStatus
+    
+    /// The status of the player.
+    public let status: AVPlayer.Status
+    
+    /// The player state derived from components.
     public var playerState: VideoPlayerState {
-        Self.playerState(
-            duration: currentItem?.duration.seconds,
-            periodicTime: currentTime().seconds,
-            timeControlStatus: timeControlStatus,
-            status: status
-        )
-    }
-    
-    /// A publisher of changes to an AVPlayer's player state.
-    public var playerStatePublisher: AnyPublisher<VideoPlayerState, Never> {
-        durationPublisher.combineLatest(
-            periodicTimePublisher(interval: 1.0),
-            timeControlStatusPublisher,
-            statusPublisher
-        )
-        .map { values -> VideoPlayerState in
-            let (duration, periodicTime, timeControlStatus, status) = values
-            return Self.playerState(
-                duration: duration,
-                periodicTime: periodicTime,
-                timeControlStatus: timeControlStatus,
-                status: status
-            )
-        }
-        .prepend(playerState)
-        .removeDuplicates()
-        .eraseToAnyPublisher()
-    }
-    
-    static func playerState(duration: Double?, periodicTime: Double, timeControlStatus: TimeControlStatus, status: Status) -> VideoPlayerState {
         guard status != .unknown else { return .loading }
         guard timeControlStatus != .waitingToPlayAtSpecifiedRate else { return .stalled }
         guard status != .failed else { return .error }
@@ -189,6 +172,55 @@ extension AVPlayer {
                 return .paused
             }
         }
+    }
+}
+
+extension AVPlayer {
+    /// The current components of the player that make up the player state.
+    public var playerStateComponents: VideoPlayerStateComponents {
+        VideoPlayerStateComponents(
+            duration: currentItem?.duration.seconds,
+            periodicTime: currentTime().seconds,
+            timeControlStatus: timeControlStatus,
+            status: status
+        )
+    }
+    
+    /// The current state of a video player.
+    public var playerState: VideoPlayerState {
+        playerStateComponents.playerState
+    }
+    
+    /// A publisher of changes to an AVPlayer's player state components.
+    public func playerStateComponentsPublisher(interval: Double) -> AnyPublisher<VideoPlayerStateComponents, Never> {
+        durationPublisher.combineLatest(
+            periodicTimePublisher(interval: 1.0),
+            timeControlStatusPublisher,
+            statusPublisher
+        )
+        .map { values in
+            let (duration, periodicTime, timeControlStatus, status) = values
+            return VideoPlayerStateComponents(
+                duration: duration,
+                periodicTime: periodicTime,
+                timeControlStatus: timeControlStatus,
+                status: status
+            )
+        }
+        .prepend(playerStateComponents)
+        .removeDuplicates()
+        .eraseToAnyPublisher()
+    }
+    
+    /// A publisher of changes to an AVPlayer's player state.
+    public func playerStatePublisher(interval: Double) -> AnyPublisher<VideoPlayerState, Never> {
+        playerStateComponentsPublisher(interval: interval)
+            .map { components -> VideoPlayerState in
+                components.playerState
+            }
+            .prepend(playerState)
+            .removeDuplicates()
+            .eraseToAnyPublisher()
     }
 }
 
